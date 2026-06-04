@@ -487,3 +487,122 @@ footer {
     text-align: right;
     font-family: var(--font-arabic);
 }
+
+/* Mobile Responsive Styling (max-width: 600px) */
+@media (max-width: 600px) {
+    /* Header & Navigation */
+    header {
+        padding: 0.75rem 1rem !important;
+    }
+    .nav-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    .logo {
+        font-size: 1.1rem !important;
+    }
+    .nav-actions {
+        gap: 0.4rem !important;
+    }
+    .btn-contact, .btn-briefing {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        border-radius: 6px !important;
+    }
+    .lang-switch-group {
+        padding: 0.15rem !important;
+        gap: 0.25rem !important;
+    }
+    .lang-btn {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 6.5rem 1rem 3rem !important;
+        min-height: auto !important;
+    }
+    .hero-content {
+        text-align: center !important;
+    }
+    .badge {
+        font-size: 0.75rem !important;
+        padding: 0.4rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .hero-title {
+        font-size: 2.1rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 1rem !important;
+    }
+    .hero-desc {
+        font-size: 0.95rem !important;
+        margin-bottom: 2rem !important;
+        padding: 0 0.25rem !important;
+    }
+    .hero-ctas {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+    }
+    .hero-ctas button {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* General Sections */
+    section {
+        padding: 3.5rem 1rem !important;
+    }
+    .section-header {
+        margin-bottom: 2.5rem !important;
+    }
+    .section-header h2 {
+        font-size: 1.75rem !important;
+    }
+    .section-header p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Design Gallery */
+    .gallery-card {
+        padding: 1.25rem !important;
+        border-radius: 12px !important;
+    }
+    .gallery-img-container {
+        height: 220px !important;
+    }
+
+    /* Features Grid */
+    .feature-card {
+        padding: 1.75rem 1.25rem !important;
+        border-radius: 10px !important;
+    }
+
+    /* Contact & Registration Forms */
+    .form-box {
+        padding: 2rem 1.25rem !important;
+        border-radius: 12px !important;
+    }
+    .form-box h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.35rem !important;
+    }
+    .form-box p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2.5rem 1rem !important;
+    }
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+    }
+}
