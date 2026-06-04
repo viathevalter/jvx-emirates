@@ -1,6 +1,7 @@
 const translations = {
     en: {
         "nav-logo": "JVX <span>EMIRATES</span>",
+        "nav-briefing": "Briefing Portal",
         "nav-contact": "Contact Us",
         "badge": "Now Expanding to Dubai & UAE",
         "hero-title": "Premium Labor Outsourcing <span>Bridging Asia & The Gulf</span>",
@@ -45,6 +46,7 @@ const translations = {
     },
     pt: {
         "nav-logo": "JVX <span>EMIRATES</span>",
+        "nav-briefing": "Portal de Briefing",
         "nav-contact": "Fale Conosco",
         "badge": "Expansão para Dubai e Emirados Árabes",
         "hero-title": "Terceirização de Mão de Obra Premium <span>Conectando a Ásia e o Golfo</span>",
@@ -89,6 +91,7 @@ const translations = {
     },
     ar: {
         "nav-logo": "جي في إكس <span>الإمارات</span>",
+        "nav-briefing": "بوابة الاستبيان",
         "nav-contact": "اتصل بنا",
         "badge": "نتوسع الآن في دبي والإمارات العربية المتحدة",
         "hero-title": "استقدام وتعهيد العمالة <span>يربط بين آسيا والخليج</span>",
