@@ -1,0 +1,15 @@
+{
+  "name": "jvx-emirates-landing",
+  "version": "1.0.0",
+  "description": "Institutional Landing Page for JVX Emirates Dubai",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y lite-server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

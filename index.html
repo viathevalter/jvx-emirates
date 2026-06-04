@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVX Emirates - Manpower Outsourcing Dubai</title>
+    <meta name="description" content="Premium manpower outsourcing and recruitment agency bridging Asian talent with Dubai business excellence. Integrated with MCS ERP.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo" id="logo" data-translate="nav-logo">
+                JVX <span>EMIRATES</span>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switch-group">
+                    <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
+                    <button class="lang-btn" data-lang="ar">🇦🇪 AR</button>
+                </div>
+                <button class="btn-contact" data-translate="nav-contact" onclick="document.getElementById('clients').scrollIntoView({behavior: 'smooth'})">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge" data-translate="badge">Now Expanding to Dubai & UAE</div>
+            <h1 class="hero-title" data-translate="hero-title">
+                Premium Labor Outsourcing <span>Bridging Asia & The Gulf</span>
+            </h1>
+            <p class="hero-desc" data-translate="hero-desc">
+                Connecting top-tier manpower from across Asian markets to major companies in Dubai. Fully integrated with our state-of-the-art MCS management system.
+            </p>
+            <div class="hero-ctas">
+                <button class="btn-primary" data-translate="btn-client" onclick="document.getElementById('clients').scrollIntoView({behavior: 'smooth'})">
+                    Hire Manpower (For Clients)
+                </button>
+                <button class="btn-secondary" data-translate="btn-candidate" onclick="document.getElementById('candidates').scrollIntoView({behavior: 'smooth'})">
+                    Apply for Jobs (For Candidates)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Gallery (Branding & Layout) -->
+    <section id="concepts">
+        <div class="section-header">
+            <h2 data-translate="section-concept-title">Brand & Digital Concepts</h2>
+            <p data-translate="section-concept-desc">Initial creative design options generated for JVX Emirates branding and portal aesthetics.</p>
+        </div>
+        <div class="design-gallery">
+            <div class="gallery-card">
+                <h3 data-translate="card-logo-title">Visual Identity Concept</h3>
+                <p data-translate="card-logo-desc">Minimalist corporate emblem combining JVX initials with gold accents representing trust, growth, and Dubai's premium business environment.</p>
+                <div class="gallery-img-container">
+                    <img src="assets/images/logo-concept.png" alt="JVX Logo Concept">
+                </div>
+            </div>
+            <div class="gallery-card">
+                <h3 data-translate="card-web-title">Bilingual Portal Mockup</h3>
+                <p data-translate="card-web-desc">Modern dark dashboard layout designed for corporate clients and candidates, optimized for seamless desktop and mobile recruitment.</p>
+                <div class="gallery-img-container">
+                    <img src="assets/images/website-mockup.png" alt="JVX Website Mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MCS Integration Section -->
+    <section id="mcs-integration">
+        <div class="section-header">
+            <h2 data-translate="section-mcs-title">MCS Core Integration</h2>
+            <p data-translate="section-mcs-desc">How our Management Control System streamlines the entire manpower lifecycle from recruitment to payroll.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 data-translate="mcs-rh-title">HR & Candidate Tracking</h3>
+                <p data-translate="mcs-rh-desc">Direct pipeline from Asian sourcing hubs into the MCS database. Real-time background checks, documentation status, and visa tracking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏢</div>
+                <h3 data-translate="mcs-com-title">Commercial Portal</h3>
+                <p data-translate="mcs-com-desc">Corporate clients in Dubai can request workers, approve time sheets, and request staffing contracts directly through the integrated portal.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3 data-translate="mcs-pay-title">Automated Payroll</h3>
+                <p data-translate="mcs-pay-desc">Fully compliant with UAE Wages Protection System (WPS). Seamless monthly billing, staff payroll, and financial tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="contact-forms">
+        <div class="forms-section">
+            <!-- Client Request Form -->
+            <div class="form-box" id="clients">
+                <h3 data-translate="form-client-title">Partner with JVX Emirates</h3>
+                <p data-translate="form-client-desc">Need qualified manpower for your business in Dubai? Send us a request, and we will get back to you with custom CV profiles.</p>
+                <form id="client-form">
+                    <div class="form-group">
+                        <label for="client-name" data-translate="label-name">Company Name</label>
+                        <input type="text" id="client-name" required data-translate-placeholder="label-name" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email" data-translate="label-email">Email Address</label>
+                        <input type="email" id="client-email" required data-translate-placeholder="label-email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-sector" data-translate="label-sector">Primary Sector</label>
+                        <select id="client-sector" required>
+                            <option value="" disabled selected data-translate="select-sector-placeholder">Select your industry...</option>
+                            <option value="construction" data-translate="sector-construction">Construction & Infrastructure</option>
+                            <option value="hospitality" data-translate="sector-hospitality">Hospitality & Tourism</option>
+                            <option value="services" data-translate="sector-services">Facilities & Cleaning Services</option>
+                            <option value="tech" data-translate="sector-tech">IT & White-Collar Staffing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-workers" data-translate="label-workers">Estimated Staff Needed</label>
+                        <input type="number" id="client-workers" min="1" required data-translate-placeholder="label-workers" placeholder="Estimated Staff Needed">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-message" data-translate="label-message">Requirements Details</label>
+                        <textarea id="client-message" rows="4" data-translate-placeholder="label-message" placeholder="Additional Details / Requirements"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-translate="btn-submit-client">Submit Inquiry</button>
+                </form>
+            </div>
+
+            <!-- Candidate Registration Form -->
+            <div class="form-box" id="candidates">
+                <h3 data-translate="form-cand-title">Global Opportunities</h3>
+                <p data-translate="form-cand-desc">Are you a skilled worker from Asia looking to build your career in the UAE? Submit your details to enter our recruitment pipeline.</p>
+                <form id="candidate-form">
+                    <div class="form-group">
+                        <label for="cand-name" data-translate="label-name">Full Name</label>
+                        <input type="text" id="cand-name" required data-translate-placeholder="label-name" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cand-email" data-translate="label-email">Email Address</label>
+                        <input type="email" id="cand-email" required data-translate-placeholder="label-email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="cand-phone" data-translate="label-phone">Phone Number</label>
+                        <input type="tel" id="cand-phone" required data-translate-placeholder="label-phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="cand-sector" data-translate="label-sector">Desired Sector</label>
+                        <select id="cand-sector" required>
+                            <option value="" disabled selected data-translate="select-sector-placeholder">Select your industry...</option>
+                            <option value="construction" data-translate="sector-construction">Construction & Infrastructure</option>
+                            <option value="hospitality" data-translate="sector-hospitality">Hospitality & Tourism</option>
+                            <option value="services" data-translate="sector-services">Facilities & Cleaning Services</option>
+                            <option value="tech" data-translate="sector-tech">IT & White-Collar Staffing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cand-experience" data-translate="label-experience">Years of Experience</label>
+                        <input type="number" id="cand-experience" min="0" required data-translate-placeholder="label-experience" placeholder="Years of Experience">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-translate="btn-submit-cand">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">JVX <span>EMIRATES</span></div>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.875rem;" data-translate="footer-desc">Connecting Global Talent with Gulf Enterprises.</p>
+            </div>
+            <div class="footer-copyright" data-translate="footer-copy">
+                &copy; 2026 JVX Emirates. All rights reserved. Domain registered at jvx-emirates.com
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
