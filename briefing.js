@@ -239,11 +239,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 recognition.onerror = (event) => {
                     console.error('Speech recognition error', event.error);
-                    let errMsg = 'Erro de áudio';
+                    let errMsg = 'Erro de Áudio';
                     if (event.error === 'not-allowed') {
-                        errMsg = 'Permissão do Microfone negada!';
+                        errMsg = 'Permissão negada. Ative o microfone no navegador.';
                     } else if (event.error === 'no-speech') {
-                        errMsg = 'Nenhuma voz detectada.';
+                        errMsg = 'Nenhuma voz detectada. Fale novamente.';
+                    } else if (event.error === 'audio-capture') {
+                        errMsg = 'Microfone não encontrado ou ocupado por outro app.';
+                    } else if (event.error === 'network') {
+                        errMsg = 'Erro de rede (a transcrição precisa de internet).';
+                    } else {
+                        errMsg = `Erro de Áudio (${event.error})`;
                     }
                     statusSpan.innerText = errMsg;
                     stopRecordingUI(btn, statusSpan);
