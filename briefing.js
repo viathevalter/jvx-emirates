@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Initialize new SpeechRecognition
                 const recognition = new SpeechRecognition();
-                recognition.continuous = true;
+                recognition.continuous = false;
                 recognition.interimResults = false;
                 recognition.lang = selectedLang;
 
