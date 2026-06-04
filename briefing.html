@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVX Emirates - Portal de Briefing Estratégico</title>
+    <meta name="description" content="Portal interativo para preenchimento de briefing e especificações para o projeto JVX Emirates.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="briefing.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="briefing-header">
+        <div class="nav-container">
+            <div class="logo">
+                JVX <span>EMIRATES</span> <span class="badge-portal">Briefing Portal</span>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Voltar ao Site</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="briefing-container">
+        <!-- Progress Steps -->
+        <div class="steps-progress">
+            <div class="step active" data-step="1">
+                <div class="step-num">1</div>
+                <div class="step-label">Contato & Registro</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-num">2</div>
+                <div class="step-label">Negócio & Escopo</div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-num">3</div>
+                <div class="step-label">Sourcing & Talentos</div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-num">4</div>
+                <div class="step-label">Identidade & Marca</div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-num">5</div>
+                <div class="step-label">Finalizar</div>
+            </div>
+        </div>
+
+        <!-- Forms Form Wrapper -->
+        <form id="briefing-form" class="form-box-briefing">
+            
+            <!-- STEP 1: Contato e Registro -->
+            <div class="form-step active" id="step-1">
+                <h2>1. Informações Corporativas & Contato</h2>
+                <p class="step-desc">Insira os dados oficiais da empresa que serão exibidos publicamente no website (rodapé, cabeçalho e páginas de contato).</p>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="razaoSocial">Razão Social / Nome de Registro</label>
+                        <input type="text" id="razaoSocial" name="razaoSocial" placeholder="Ex: JVX Emirates Manpower Supply LLC" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeFantasia">Nome Fantasia (Marca Comercial)</label>
+                        <input type="text" id="nomeFantasia" name="nomeFantasia" placeholder="Ex: JVX Emirates" required>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="telefone">Telefone Comercial / WhatsApp (com DDI)</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Ex: +971 4 XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail Principal de Contato</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: info@jvx-emirates.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="licencaComercial">Registro de Licença Comercial / Free Zone (opcional)</label>
+                    <input type="text" id="licencaComercial" name="licencaComercial" placeholder="Ex: DED License nº 123456 / DMCC Free Zone">
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço do Escritório Físico (Dubai/UAE)</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="endereco" name="endereco" rows="3" placeholder="Ex: Office 101, Business Bay Tower, Dubai, UAE" required></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="endereco">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="endereco">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Negócio e Escopo -->
+            <div class="form-step" id="step-2">
+                <h2>2. Modelo de Negócio & Escopo</h2>
+                <p class="step-desc">Indique os serviços que serão oferecidos e os setores que a JVX Emirates irá atender.</p>
+
+                <div class="form-group">
+                    <label>Quais serão exatamente os serviços da JVX Emirates? (Selecione todos os aplicáveis)</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Fornecimento de Mão de Obra (Outsourcing)">
+                            <span class="checkbox-custom"></span>
+                            Fornecimento de Mão de Obra (Outsourcing)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Recrutamento e Seleção (Headhunting)">
+                            <span class="checkbox-custom"></span>
+                            Recrutamento e Seleção (Headhunting)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Terceirização de Processos (BPO)">
+                            <span class="checkbox-custom"></span>
+                            Terceirização de Processos (BPO)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Gestão de Folha e Compliance (Payroll)">
+                            <span class="checkbox-custom"></span>
+                            Gestão de Folha e Compliance (Payroll)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Gestão de Vistos e Documentação (PRO Services)">
+                            <span class="checkbox-custom"></span>
+                            Gestão de Vistos e Documentação (PRO Services)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="servicos" value="Suporte Operacional (Alojamento e Transporte)">
+                            <span class="checkbox-custom"></span>
+                            Suporte Operacional (Alojamento, Transporte, etc.)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quais setores ela vai atender primeiro? (Selecione todos os aplicáveis)</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Construção Civil & Infraestrutura">
+                            <span class="checkbox-custom"></span>
+                            Construção Civil & Infraestrutura
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Indústria, Óleo & Gás (Metalmecânica)">
+                            <span class="checkbox-custom"></span>
+                            Indústria, Óleo & Gás (Metalmecânica)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Hotelaria & Facilities (Hospitality)">
+                            <span class="checkbox-custom"></span>
+                            Hotelaria & Facilities
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Logística & Manutenção">
+                            <span class="checkbox-custom"></span>
+                            Logística & Manutenção
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Serviços de Limpeza & Segurança">
+                            <span class="checkbox-custom"></span>
+                            Serviços de Limpeza & Segurança
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="setores" value="Tecnologia & Escritório (White-Collar)">
+                            <span class="checkbox-custom"></span>
+                            Tecnologia & Escritório
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Qual é o perfil do cliente final da empresa?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="perfilCliente" value="Empresas locais de Dubai/UAE">
+                            <span class="checkbox-custom"></span>
+                            Empresas locais de Dubai/UAE
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="perfilCliente" value="Multinacionais que operam no Golfo">
+                            <span class="checkbox-custom"></span>
+                            Multinacionais
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="perfilCliente" value="Grandes Construtoras e Consórcios">
+                            <span class="checkbox-custom"></span>
+                            Grandes Construtoras
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="perfilCliente" value="Órgãos de Governo / Setor Público">
+                            <span class="checkbox-custom"></span>
+                            Governo / Setor Público
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quais diferenciais competitivos ele quer comunicar no site?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="diferenciais" value="Controle tecnológico via MCS (Sua plataforma integrada)">
+                            <span class="checkbox-custom"></span>
+                            Controle tecnológico via MCS (Sua plataforma integrada)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="diferenciais" value="Velocidade de mobilização legal (processamento rápido)">
+                            <span class="checkbox-custom"></span>
+                            Velocidade de mobilização legal
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="diferenciais" value="Conformidade jurídica estrita (MOHRE & WPS)">
+                            <span class="checkbox-custom"></span>
+                            Conformidade jurídica estrita (MOHRE & WPS)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="diferenciais" value="Trabalhadores testados e qualificados">
+                            <span class="checkbox-custom"></span>
+                            Trabalhadores testados e qualificados
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="diferenciais" value="Gestão de ponta a ponta (transporte, alojamento, vistos)">
+                            <span class="checkbox-custom"></span>
+                            Gestão de ponta a ponta
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="detalheEscopo">Detalhes Adicionais sobre a Operação / Escopo de Gestão</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="detalheEscopo" name="detalheEscopo" rows="4" placeholder="Descreva detalhes específicos do serviço. Ex: a empresa vai apenas gerir o recrutamento ou assumir folha, alojamento e transporte?"></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="detalheEscopo">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="detalheEscopo">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Trabalhadores e Sourcing -->
+            <div class="form-step" id="step-3">
+                <h2>3. Força de Trabalho & Sourcing</h2>
+                <p class="step-desc">Especifique a origem da mão de obra, os níveis de qualificação e as funções que serão ofertadas.</p>
+
+                <div class="form-group">
+                    <label>De quais países virão preferencialmente os trabalhadores?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Índia">
+                            <span class="checkbox-custom"></span>
+                            Índia 🇮🇳
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Paquistão">
+                            <span class="checkbox-custom"></span>
+                            Paquistão 🇵🇰
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Bangladesh">
+                            <span class="checkbox-custom"></span>
+                            Bangladesh 🇧🇩
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Nepal">
+                            <span class="checkbox-custom"></span>
+                            Nepal 🇳🇵
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Filipinas">
+                            <span class="checkbox-custom"></span>
+                            Filipinas 🇵🇭
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Sri Lanka">
+                            <span class="checkbox-custom"></span>
+                            Sri Lanka 🇱🇰
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="paisesSourcing" value="Indonésia">
+                            <span class="checkbox-custom"></span>
+                            Indonésia 🇮🇩
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Qual será o nível de qualificação da mão de obra?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="qualificacao" value="Qualificada (White-Collar: Engenheiros, Supervisores, Admin)">
+                            <span class="checkbox-custom"></span>
+                            Qualificada (Engenheiros, Supervisores, Admin)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="qualificacao" value="Semiqualificada (Mecânicos, Soldadores, Eletricistas, Motoristas)">
+                            <span class="checkbox-custom"></span>
+                            Semiqualificada (Mecânicos, Eletricistas, Motoristas)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="qualificacao" value="Geral / Industrial (Cleaners, Ajudantes de Obra, Operários)">
+                            <span class="checkbox-custom"></span>
+                            Geral / Industrial (Ajudantes, Limpeza, Operários)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="funcoesPrincipais">Principais Funções / Cargos que a JVX irá disponibilizar</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="funcoesPrincipais" name="funcoesPrincipais" rows="3" placeholder="Ex: Welders (soldadores), Pipefitters, Electricians, Drivers, Cleaners, Construction workers..."></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="funcoesPrincipais">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="funcoesPrincipais">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>A empresa quer exibir no site que possui um Banco de Talentos Internacional?</label>
+                    <div class="radio-group">
+                        <label class="radio-container">
+                            <input type="radio" name="bancoTalentos" value="Sim, com destaque" checked>
+                            <span class="radio-custom"></span>
+                            Sim, com destaque para a captação e pipeline global.
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="bancoTalentos" value="Não, foco apenas na solução local">
+                            <span class="radio-custom"></span>
+                            Não, manter o foco 100% nas soluções para os clientes dos EAU.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="parceriasSourcing">Como será o recrutamento nos países de origem? (Escritórios parceiros, etc.)</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="parceriasSourcing" name="parceriasSourcing" rows="3" placeholder="Ex: Teremos parceiros licenciados locais na Índia e Bangladesh que aplicam testes práticos nos operários."></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="parceriasSourcing">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="parceriasSourcing">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: Identidade e Marca -->
+            <div class="form-step" id="step-4">
+                <h2>4. Identidade Visual & Conceito da Marca</h2>
+                <p class="step-desc">Defina o tom de voz e a percepção visual que a JVX Emirates deve transmitir ao mercado B2B.</p>
+
+                <div class="form-group">
+                    <label>Qual deve ser a estética visual e percepção principal da marca?</label>
+                    <div class="radio-group">
+                        <label class="radio-container">
+                            <input type="radio" name="percepcaoMarca" value="Corporativa & Confiável (Premium, limpa, séria, focada em compliance)" checked>
+                            <span class="radio-custom"></span>
+                            Corporativa & Confiável (Séria, robusta, corporativa B2B)
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="percepcaoMarca" value="Tecnológica & Moderna (Focada na integração com o MCS e eficiência)">
+                            <span class="radio-custom"></span>
+                            Tecnológica & Moderna (Foco em agilidade, dados, dashboard)
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="percepcaoMarca" value="Luxuosa & Premium (Estilo Dubai corporativo, muito elegante e seleta)">
+                            <span class="radio-custom"></span>
+                            Luxuosa & Premium (Estilo alto padrão Dubai)
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="percepcaoMarca" value="Industrial & Operacional (Focada em força de trabalho, grandes obras e metalmecânica)">
+                            <span class="radio-custom"></span>
+                            Industrial & Operacional (Foco em escala, obras e produção)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quais cores ele prefere ou sugere para a marca?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="coresMarca" value="Azul Escuro / Navy (Confiança, B2B)">
+                            <span class="checkbox-custom"></span>
+                            Azul Escuro / Navy (Confiança, B2B)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="coresMarca" value="Dourado / Gold (Luxo, Prosperidade, Dubai)">
+                            <span class="checkbox-custom"></span>
+                            Dourado / Gold (Luxo, Prosperidade, Dubai)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="coresMarca" value="Verde Escuro / Esmeralda (Cultura local, Crescimento)">
+                            <span class="checkbox-custom"></span>
+                            Verde Escuro / Esmeralda (Cultura local)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="coresMarca" value="Preto & Cinza Escuro (Sofisticação, Tecnologia)">
+                            <span class="checkbox-custom"></span>
+                            Preto & Cinza Escuro (Tecnologia e Vanguarda)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="coresMarca" value="Branco (Limpeza visual e contraste)">
+                            <span class="checkbox-custom"></span>
+                            Branco (Limpeza visual)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="corOutra">Outras preferências de cor ou comentários visuais</label>
+                    <input type="text" id="corOutra" name="corOutra" placeholder="Ex: Gostaria de tons cinza metálicos e azul royal.">
+                </div>
+
+                <div class="form-group">
+                    <label for="nomeSignificado">O nome 'JVX Emirates' possui algum significado específico?</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="nomeSignificado" name="nomeSignificado" rows="2" placeholder="Descreva se as letras J, V, X representam nomes de sócios, valores ou alguma sigla de negócios."></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="nomeSignificado">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="nomeSignificado">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="diretrizesLogo">Ideias ou preferências para o símbolo do logotipo</label>
+                    <div class="textarea-voice-container">
+                        <textarea id="diretrizesLogo" name="diretrizesLogo" rows="3" placeholder="Ex: Gostaríamos de usar um símbolo geométrico sutil que misture as letras JVX com a ideia de conexão global de pessoas, ou algo focado em crescimento."></textarea>
+                        <div class="voice-bar">
+                            <button type="button" class="btn-voice" data-target="diretrizesLogo">
+                                <span class="mic-icon">🎙️</span> <span class="voice-text">Falar Resposta</span>
+                            </button>
+                            <div class="voice-options">
+                                <label>Idioma:</label>
+                                <select class="voice-lang" data-target="diretrizesLogo">
+                                    <option value="pt-BR" selected>Português</option>
+                                    <option value="en-US">English</option>
+                                </select>
+                            </div>
+                            <span class="voice-status">Aguardando...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>A marca deve parecer mais de origem dos Emirados ou Internacional?</label>
+                    <div class="radio-group">
+                        <label class="radio-container">
+                            <input type="radio" name="origemMarca" value="Internacional, corporativa e global" checked>
+                            <span class="radio-custom"></span>
+                            Internacional e Global (Foco no B2B multinacional e sourcing de elite)
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="origemMarca" value="Local dos Emirados (Com elementos árabes e culturais mais evidentes)">
+                            <span class="radio-custom"></span>
+                            Local dos Emirados (Apropriada à cultura de Dubai)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5: Finalizar e Exportar -->
+            <div class="form-step" id="step-5">
+                <h2>5. Resumo & Exportação de Briefing</h2>
+                <p class="step-desc">Revise as informações preenchidas abaixo. Você pode editar qualquer campo voltando às abas anteriores. Quando estiver pronto, use as ferramentas de exportação para nos enviar o briefing completo.</p>
+
+                <!-- Dynamic Preview Dashboard -->
+                <div class="preview-dashboard">
+                    <h3>Visualização das Informações</h3>
+                    <div id="preview-content">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Export CTA Buttons -->
+                <div class="export-actions-grid">
+                    <button type="button" id="btn-copy-markdown" class="btn-export primary">
+                        <span class="icon">📋</span> Copiar Relatório (WhatsApp/E-mail)
+                    </button>
+                    <button type="button" id="btn-download-md" class="btn-export secondary">
+                        <span class="icon">📝</span> Baixar Relatório (.md)
+                    </button>
+                    <button type="button" id="btn-download-json" class="btn-export secondary">
+                        <span class="icon">⚙️</span> Baixar Dados em JSON
+                    </button>
+                    <button type="button" id="btn-share-email" class="btn-export secondary">
+                        <span class="icon">📧</span> Enviar por E-mail
+                    </button>
+                </div>
+
+                <div class="reset-zone">
+                    <button type="button" id="btn-clear-form" class="btn-reset">⚠️ Limpar Todos os Campos e Recomeçar</button>
+                </div>
+            </div>
+
+            <!-- Wizard Footer Buttons -->
+            <div class="briefing-form-footer">
+                <button type="button" id="btn-prev" class="btn-secondary" style="display: none;">Anterior</button>
+                <button type="button" id="btn-next" class="btn-primary">Próximo Passo</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">JVX <span>EMIRATES</span></div>
+            <div class="footer-copyright">
+                &copy; 2026 JVX Emirates. Portal de Captura de Briefing.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Speech Script and form handler -->
+    <script src="briefing.js"></script>
+</body>
+</html>
