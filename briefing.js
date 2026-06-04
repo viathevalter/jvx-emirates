@@ -45,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
             btnNext.style.display = 'block';
         }
 
+        // Hide global clear responses button on Step 5 (it has its own reset button)
+        const globalClearBtn = document.querySelector('.btn-clear-all-global');
+        if (globalClearBtn) {
+            if (currentStep === totalSteps) {
+                globalClearBtn.style.display = 'none';
+            } else {
+                globalClearBtn.style.display = 'block';
+            }
+        }
+
         // Scroll to top of the form box
         document.querySelector('.form-box-briefing').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -521,8 +531,8 @@ ${data.diretrizesLogo || 'Não informado.'}
     });
 
 
-    // Reset Form button
-    document.getElementById('btn-clear-form').addEventListener('click', () => {
+    // Clear Form logic
+    const clearForm = () => {
         if (confirm('⚠️ Tem certeza que deseja limpar todos os campos? Isso apagará as respostas salvas neste computador.')) {
             localStorage.removeItem('jvx_briefing_data');
             form.reset();
@@ -533,7 +543,16 @@ ${data.diretrizesLogo || 'Não informado.'}
             showToast('🔄 Todos os dados foram limpos.');
             showStep(1);
         }
-    });
+    };
+
+    // Reset Form button on Step 5
+    document.getElementById('btn-clear-form').addEventListener('click', clearForm);
+
+    // Global reset button in footer
+    const globalClearBtnEl = document.querySelector('.btn-clear-all-global');
+    if (globalClearBtnEl) {
+        globalClearBtnEl.addEventListener('click', clearForm);
+    }
 
 
     // 6. Toast System Helper
