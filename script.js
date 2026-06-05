@@ -1,138 +1,207 @@
 const translations = {
     en: {
-        "nav-logo": "JVX <span>EMIRATES</span>",
-        "nav-briefing": "Briefing Portal",
-        "nav-contact": "Contact Us",
-        "badge": "Now Expanding to Dubai & UAE",
-        "hero-title": "Premium Labor Outsourcing <span>Bridging Asia & The Gulf</span>",
-        "hero-desc": "Connecting top-tier manpower from across Asian markets to major companies in Dubai. Fully integrated with our state-of-the-art MCS management system.",
-        "btn-client": "Hire Manpower (For Clients)",
-        "btn-candidate": "Apply for Jobs (For Candidates)",
-        "section-concept-title": "Brand & Digital Concepts",
-        "section-concept-desc": "Initial creative design options generated for JVX Emirates branding and portal aesthetics.",
-        "card-logo-title": "Visual Identity Concept",
-        "card-logo-desc": "Minimalist corporate emblem combining JVX initials with gold accents representing trust, growth, and Dubai's premium business environment.",
-        "card-web-title": "Bilingual Portal Mockup",
-        "card-web-desc": "Modern dark dashboard layout designed for corporate clients and candidates, optimized for seamless desktop and mobile recruitment.",
-        "section-mcs-title": "MCS Core Integration",
-        "section-mcs-desc": "How our Management Control System streamlines the entire manpower lifecycle from recruitment to payroll.",
-        "mcs-rh-title": "HR & Candidate Tracking",
-        "mcs-rh-desc": "Direct pipeline from Asian sourcing hubs into the MCS database. Real-time background checks, documentation status, and visa tracking.",
-        "mcs-com-title": "Commercial Portal",
-        "mcs-com-desc": "Corporate clients in Dubai can request workers, approve time sheets, and request custom staffing contracts directly through the integrated portal.",
-        "mcs-pay-title": "Automated Payroll",
-        "mcs-pay-desc": "Fully compliant with UAE Wages Protection System (WPS). Seamless monthly billing, staff payroll, and financial tracking.",
-        "form-client-title": "Partner with JVX Emirates",
-        "form-client-desc": "Need qualified manpower for your business in Dubai? Send us a request, and we will get back to you with custom CV profiles.",
-        "form-cand-title": "Global Opportunities",
-        "form-cand-desc": "Are you a skilled worker from Asia looking to build your career in the UAE? Submit your details to enter our recruitment pipeline.",
-        "label-name": "Full Name / Company Name",
-        "label-email": "Email Address",
-        "label-sector": "Primary Sector / Industry",
-        "label-workers": "Estimated Staff Needed",
-        "label-message": "Additional Details / Requirements",
-        "btn-submit-client": "Submit Inquiry",
-        "btn-submit-cand": "Submit Application",
-        "label-phone": "Phone Number (with Country Code)",
-        "label-resume": "Upload CV / Resume (PDF)",
-        "label-experience": "Years of Experience",
-        "select-sector-placeholder": "Select your industry...",
-        "sector-construction": "Construction & Infrastructure",
-        "sector-hospitality": "Hospitality & Tourism",
-        "sector-services": "Facilities & Cleaning Services",
-        "sector-tech": "IT & White-Collar Staffing",
-        "footer-desc": "Connecting Global Talent with Gulf Enterprises.",
-        "footer-copy": "&copy; 2026 JVX Emirates. All rights reserved. Domain registered at jvx-emirates.com"
+        "nav-about": "About Us",
+        "nav-services": "Services",
+        "nav-advantage": "Dubai Advantage",
+        "nav-hub": "Global Flow",
+        "nav-contact-link": "Contact",
+        "nav-quote": "Get Proposal",
+        "hero-badge": "Global Offshore FZCO Hub",
+        "hero-title": "Global Strategy. <br>Beyond Borders.",
+        "hero-desc": "Bridging international markets from Dubai. We deliver top-tier social media management, strategic business consultancy, and commercial brokerage services worldwide.",
+        "hero-btn-primary": "Explore Services",
+        "hero-btn-outline": "Request Consultation",
+        "switcher-title": "Select Background Style",
+        "switcher-dubai": "Dubai View",
+        "switcher-tech": "Digital Network",
+        "about-badge": "Who We Are",
+        "about-title": "Connecting Opportunities <br>On a <span>Global Scale</span>",
+        "about-p1": "JVX International Business FZCO was born from the vision of connecting opportunities, companies, and people globally. More than a brand, JVX represents a concept of smart integration, where strategy, trust, and performance unite to propel business beyond borders.",
+        "about-p2": "Operating as a bridge between dynamic markets, we translate operational complexity into elegant solutions. Based in Dubai, we invoice globally while executing highly specialized services, providing security, compliance, and growth for international partners.",
+        "about-badge-desc": "Dubai Registered",
+        "services-title": "Our Core <span>Expertise</span>",
+        "services-subtitle": "Three pillars of specialized corporate services designed to maximize your global market reach and administrative efficiency.",
+        "service1-title": "Social Media Marketing",
+        "service1-desc": "Comprehensive digital strategies, content production, brand management, and high-performance paid campaigns. We build your global presence and engage audiences across markets.",
+        "service2-title": "Management Consultancy",
+        "service2-desc": "Strategic corporate re-structuring, operations advisory, scalability roadmaps, and administrative planning. Aligning international billing and compliance structures.",
+        "service3-title": "Commercial Brokerage",
+        "service3-desc": "B2B business brokering, import/export facilitation, and trade mediation. Connecting overseas buyers with supply hubs, backed by secure contractual frameworks.",
+        "pillar-action": "Learn More &rarr;",
+        "adv-visual-title": "Dubai Silicon Oasis",
+        "adv-visual-desc": "Headquartered at the IFZA Business Park, our structure operates in the most dynamic free zone in the UAE. A tech-driven hub connected to major world capitals.",
+        "adv-visual-link": "Visit IFZA Free Zone",
+        "adv-title": "The FZCO <span>Operational Advantage</span>",
+        "adv1-title": "Corporate Tax",
+        "adv1-desc": "Zero corporate and personal income taxes for offshore operations billing outside the UAE.",
+        "adv2-title": "Foreign Ownership",
+        "adv2-desc": "Full ownership of capital and assets without requiring a local UAE partner.",
+        "adv3-title": "Offshore Billing",
+        "adv3-desc": "Invoicing international clients under secure, world-class common law banking and legal structures.",
+        "adv4-title": "Premium License",
+        "adv4-desc": "FZCO registration regulated by International Free Zone Authority in Dubai Silicon Oasis.",
+        "hub-title": "Unified <span>Global Invoicing Flow</span>",
+        "hub-subtitle": "How JVX FZCO operates as a strategic bridge: receiving foreign capital, managing project fulfillment, and billing out of Dubai.",
+        "hub1-title": "Global Clients",
+        "hub1-desc": "Companies in Europe, Americas, or Asia contracting services in marketing, advisory, or trade.",
+        "hub2-title": "JVX Dubai FZCO",
+        "hub2-desc": "Contracting entity, corporate administration, secure invoicing, and compliance management.",
+        "hub3-title": "Service Delivery",
+        "hub3-desc": "Social media campaigns, strategic consulting, and trade brokering deployed globally.",
+        "contact-title": "Let's Build <span>Synergy</span>",
+        "contact-desc": "Ready to scale your marketing, review your corporate structures, or explore commercial brokering channels? Contact us today to receive a customized corporate proposal.",
+        "form-title": "Request Proposal",
+        "form-subtitle": "Fill in the details below, and our team will prepare a structured proposal for your project.",
+        "form-label-name": "Full Name",
+        "form-label-company": "Company Name",
+        "form-label-email": "Corporate Email",
+        "form-label-service": "Requested Service",
+        "form-label-message": "Project Brief / Scope Details",
+        "form-select-placeholder": "Choose service area...",
+        "form-opt-marketing": "Social Media Marketing Services",
+        "form-opt-consulting": "Management & Administrative Consultancy",
+        "form-opt-brokerage": "Commercial Brokerage Services",
+        "form-btn-submit": "Submit Request",
+        "footer-desc": "JVX INTERNATIONAL BUSINESS - FZCO. Connecting global businesses with elite trade, administrative consultancy, and digital marketing services from Dubai.",
+        "footer-header-links": "Links",
+        "footer-header-services": "Services",
+        "footer-copy": "&copy; 2026 JVX International Business - FZCO. All rights reserved. Registered at Dubai Silicon Oasis, IFZA."
     },
     pt: {
-        "nav-logo": "JVX <span>EMIRATES</span>",
-        "nav-briefing": "Portal de Briefing",
-        "nav-contact": "Fale Conosco",
-        "badge": "Expansão para Dubai e Emirados Árabes",
-        "hero-title": "Terceirização de Mão de Obra Premium <span>Conectando a Ásia e o Golfo</span>",
-        "hero-desc": "Conectando mão de obra qualificada dos mercados asiáticos com grandes empresas em Dubai. Totalmente integrado ao nosso moderno sistema de gestão MCS.",
-        "btn-client": "Contratar Mão de Obra (Clientes)",
-        "btn-candidate": "Candidatar-se a Vagas (Candidatos)",
-        "section-concept-title": "Conceitos de Marca & Digitais",
-        "section-concept-desc": "Opções iniciais de design criativo geradas para a identidade e estética do portal da JVX Emirates.",
-        "card-logo-title": "Conceito de Identidade Visual",
-        "card-logo-desc": "Emblema corporativo minimalista combinando as iniciais JVX com detalhes em ouro que representam confiança, crescimento e o ambiente de negócios premium de Dubai.",
-        "card-web-title": "Protótipo do Portal Bilíngue",
-        "card-web-desc": "Layout de dashboard escuro e moderno projetado para clientes corporativos e candidatos, otimizado para um recrutamento web e mobile ágil.",
-        "section-mcs-title": "Integração Central com o MCS",
-        "section-mcs-desc": "Como nosso Sistema de Controle de Gestão simplifica todo o ciclo de vida da mão de obra, do recrutamento à folha de pagamento.",
-        "mcs-rh-title": "Mapeamento de RH & Candidatos",
-        "mcs-rh-desc": "Conexão direta dos centros de recrutamento da Ásia com o banco de dados do MCS. Verificação de antecedentes, status de documentos e visto em tempo real.",
-        "mcs-com-title": "Portal Comercial",
-        "mcs-com-desc": "Clientes corporativos podem solicitar trabalhadores, aprovar planilhas de horas e gerenciar contratos de pessoal diretamente pelo portal integrado.",
-        "mcs-pay-title": "Folha de Pagamento Automatizada",
-        "mcs-pay-desc": "Totalmente em conformidade com o WPS dos Emirados Árabes. Faturamento mensal simplificado, folha de pagamento de funcionários e rastreamento financeiro integrado.",
-        "form-client-title": "Parceria com a JVX Emirates",
-        "form-client-desc": "Precisa de mão de obra qualificada para sua empresa em Dubai? Envie-nos uma solicitação e entraremos em contato com perfis de currículos personalizados.",
-        "form-cand-title": "Oportunidades Globais",
-        "form-cand-desc": "Você é um trabalhador qualificado da Ásia buscando construir sua carreira nos Emirados Árabes? Envie seus dados para entrar no nosso fluxo de recrutamento.",
-        "label-name": "Nome Completo / Empresa",
-        "label-email": "Endereço de E-mail",
-        "label-sector": "Setor Principal / Indústria",
-        "label-workers": "Quantidade Estimada de Funcionários",
-        "label-message": "Detalhes Adicionais / Requisitos",
-        "btn-submit-client": "Enviar Solicitação",
-        "btn-submit-cand": "Enviar Candidatura",
-        "label-phone": "Número de Telefone (com DDI)",
-        "label-resume": "Carregar Currículo (PDF)",
-        "label-experience": "Anos de Experiência",
-        "select-sector-placeholder": "Selecione seu setor...",
-        "sector-construction": "Construção Civil & Infraestrutura",
-        "sector-hospitality": "Hotelaria & Turismo",
-        "sector-services": "Instalações & Serviços de Limpeza",
-        "sector-tech": "TI & Recrutamento de Escritório",
-        "footer-desc": "Conectando Talentos Globais com Empresas do Golfo.",
-        "footer-copy": "&copy; 2026 JVX Emirates. Todos os direitos reservados. Domínio registrado em jvx-emirates.com"
+        "nav-about": "Quem Somos",
+        "nav-services": "Serviços",
+        "nav-advantage": "Vantagem Dubai",
+        "nav-hub": "Fluxo Global",
+        "nav-contact-link": "Contato",
+        "nav-quote": "Solicitar Proposta",
+        "hero-badge": "Hub FZCO Offshore Global",
+        "hero-title": "Estratégia Global. <br>Além das Fronteiras.",
+        "hero-desc": "Conectando mercados internacionais a partir de Dubai. Entregamos gestão de redes sociais de alta performance, consultoria de negócios estratégica e intermediação comercial global.",
+        "hero-btn-primary": "Explorar Serviços",
+        "hero-btn-outline": "Solicitar Consultoria",
+        "switcher-title": "Estilo de Vídeo de Fundo",
+        "switcher-dubai": "Vista Dubai",
+        "switcher-tech": "Rede Digital",
+        "about-badge": "Quem Somos",
+        "about-title": "Conectando Oportunidades <br>em <span>Escala Global</span>",
+        "about-p1": "A JVX International Business FZCO nasceu da visão de conectar oportunidades, empresas e pessoas em escala global. Mais do que uma marca, a JVX representa um conceito de integração inteligente, onde estratégia, confiança e resultados se unem para impulsionar negócios além das fronteiras.",
+        "about-p2": "Atuando como ponte entre mercados dinâmicos, traduzimos complexidade operacional em soluções elegantes. Sediados em Dubai, faturamos globalmente enquanto executamos serviços altamente especializados, garantindo segurança jurídica, eficiência fiscal e crescimento para parceiros internacionais.",
+        "about-badge-desc": "Registrada em Dubai",
+        "services-title": "Nossa <span>Expertise</span>",
+        "services-subtitle": "Três pilares de serviços corporativos especializados projetados para maximizar seu alcance de mercado e eficiência administrativa.",
+        "service1-title": "Social Media Marketing",
+        "service1-desc": "Estratégias digitais completas, produção de conteúdo, gestão de marca e campanhas patrocinadas de alta performance. Construímos sua presença digital e engajamos audiências internacionais.",
+        "service2-title": "Consultoria de Negócios",
+        "service2-desc": "Reestruturação corporativa estratégica, assessoria operacional, planejamento de expansão e eficiência administrativa. Alinhamento de estruturas de faturamento internacional.",
+        "service3-title": "Intermediação Comercial",
+        "service3-desc": "Intermediação de negócios B2B, facilitação de importação/exportação e representação comercial. Conexão entre compradores e polos de fornecimento global.",
+        "pillar-action": "Saiba Mais &rarr;",
+        "adv-visual-title": "Dubai Silicon Oasis",
+        "adv-visual-desc": "Sediada no IFZA Business Park, nossa estrutura opera na zona franca mais dinâmica dos Emirados Árabes Unidos. Um hub tecnológico conectado às principais capitais do mundo.",
+        "adv-visual-link": "Conheça a Zona Franca IFZA",
+        "adv-title": "A Vantagem <span>Operacional FZCO</span>",
+        "adv1-title": "Imposto Corporativo",
+        "adv1-desc": "Isenção tributária para operações offshore com faturamento fora dos Emirados Árabes Unidos.",
+        "adv2-title": "Propriedade Estrangeira",
+        "adv2-desc": "100% de controle do capital e dos ativos corporativos sem necessidade de sócio local dos EAU.",
+        "adv3-title": "Faturamento Offshore",
+        "adv3-desc": "Emissão de faturas para clientes globais sob sistemas bancários seguros e leis internacionais.",
+        "adv4-title": "Licença Premium",
+        "adv4-desc": "Registro FZCO regulado pela International Free Zone Authority em Dubai Silicon Oasis.",
+        "hub-title": "Fluxo de <span>Faturamento Unificado</span>",
+        "hub-subtitle": "Como a JVX FZCO opera como ponte estratégica: recebimento de capital estrangeiro, gestão de projetos e faturamento a partir de Dubai.",
+        "hub1-title": "Clientes Globais",
+        "hub1-desc": "Empresas na Europa, Américas ou Ásia contratando marketing, consultoria ou intermediação comercial.",
+        "hub2-title": "JVX Dubai FZCO",
+        "hub2-desc": "Entidade contratante, administração corporativa, faturamento seguro e gestão de conformidade.",
+        "hub3-title": "Entrega do Serviço",
+        "hub3-desc": "Campanhas de redes sociais, consultoria de gestão e operações comerciais executadas globalmente.",
+        "contact-title": "Vamos Criar <span>Sinergia</span>",
+        "contact-desc": "Pronto para escalar seu marketing, estruturar suas operações internacionais ou explorar canais comerciais? Fale conosco hoje para receber uma proposta personalizada.",
+        "form-title": "Solicitar Proposta",
+        "form-subtitle": "Preencha os dados abaixo e nossa equipe preparará uma proposta detalhada para seu projeto.",
+        "form-label-name": "Nome Completo",
+        "form-label-company": "Nome da Empresa",
+        "form-label-email": "E-mail Corporativo",
+        "form-label-service": "Serviço Solicitado",
+        "form-label-message": "Breve Resumo do Escopo",
+        "form-select-placeholder": "Selecione o serviço...",
+        "form-opt-marketing": "Serviços de Social Media Marketing",
+        "form-opt-consulting": "Consultoria Administrativa & Gestão",
+        "form-opt-brokerage": "Serviços de Intermediação Comercial",
+        "form-btn-submit": "Enviar Solicitação",
+        "footer-desc": "JVX INTERNATIONAL BUSINESS - FZCO. Conectando empresas globais com serviços de ponta em intermediação comercial, marketing digital e consultoria administrativa a partir de Dubai.",
+        "footer-header-links": "Links",
+        "footer-header-services": "Serviços",
+        "footer-copy": "&copy; 2026 JVX International Business - FZCO. Todos os direitos reservados. Registrada em Dubai Silicon Oasis, IFZA."
     },
     ar: {
-        "nav-logo": "جي في إكس <span>الإمارات</span>",
-        "nav-briefing": "بوابة الاستبيان",
-        "nav-contact": "اتصل بنا",
-        "badge": "نتوسع الآن في دبي والإمارات العربية المتحدة",
-        "hero-title": "استقدام وتعهيد العمالة <span>يربط بين آسيا والخليج</span>",
-        "hero-desc": "ربط الكفاءات والعمالة المتميزة من الأسواق الآسيوية بالشركات الكبرى في دبي. متكامل تماماً مع نظام الإدارة الذكي MCS الخاص بنا.",
-        "btn-client": "طلب عمالة (للعملاء والشركات)",
-        "btn-candidate": "تقديم طلب وظيفة (للمرشحين)",
-        "section-concept-title": "مفاهيم الهوية البصرية والموقع",
-        "section-concept-desc": "خيارات تصميم إبداعية أولية تم إعدادها للهوية البصرية لمشروع جي في إكس الإمارات.",
-        "card-logo-title": "مفهوم الهوية البصرية (اللوجو)",
-        "card-logo-desc": "شعار مؤسسي بسيط يدمج الأحرف الأولى JVX بلمسات ذهبية ترمز إلى الثقة والنمو وبيئة الأعمال الفاخرة في دبي.",
-        "card-web-title": "نموذج واجهة الموقع ثنائي اللغة",
-        "card-web-desc": "تصميم لوحة تحكم حديثة باللون الداكن مخصصة للشركات والمرشحين، مهيأة بالكامل للهواتف والأجهزة اللوحية.",
-        "section-mcs-title": "تكامل نظام MCS الأساسي",
-        "section-mcs-desc": "كيف يسهل نظام التحكم والإدارة لدينا دورة حياة استقدام العمالة بأكملها من التوظيف إلى الرواتب.",
-        "mcs-rh-title": "الموارد البشرية وتتبع المرشحين",
-        "mcs-rh-desc": "قناة مباشرة من مراكز التوظيف في آسيا إلى قاعدة بيانات MCS. فحص الخلفية الجنائية والمهنية وتتبع تأشيرات العمل فورياً.",
-        "mcs-com-title": "بوابة العملاء والشركات",
-        "mcs-com-desc": "يمكن للشركات في دبي طلب موظفين، اعتماد ساعات العمل، وإدارة عقود الاستقدام مباشرة عبر نظام مدمج.",
-        "mcs-pay-title": "إدارة الرواتب والفوترة الآلية",
-        "mcs-pay-desc": "متوافق بالكامل مع نظام حماية الأجور في الإمارات (WPS). فوترة شهرية سلسة، كشوف رواتب الموظفين وتتبع مالي متكامل.",
-        "form-client-title": "شراكة مع جي في إكس الإمارات",
-        "form-client-desc": "هل تحتاج إلى عمالة مؤهلة لأعمالك في دبي؟ أرسل طلبك وسنتواصل معك بملفات السير الذاتية المناسبة.",
-        "form-cand-title": "فرص عمل عالمية",
-        "form-cand-desc": "هل أنت عامل ماهر أو مهندس في آسيا وتبحث عن عمل في الإمارات؟ أرسل تفاصيلك للدخول في قاعدة بيانات التوظيف لدينا.",
-        "label-name": "الاسم الكامل / اسم الشركة",
-        "label-email": "البريد الإلكتروني",
-        "label-sector": "القطاع الرئيسي / الصناعة",
-        "label-workers": "عدد الموظفين المطلوبين تقريباً",
-        "label-message": "تفاصيل أو متطلبات إضافية",
-        "btn-submit-client": "إرسال الطلب",
-        "btn-submit-cand": "تقديم الطلب",
-        "label-phone": "رقم الهاتف (مع رمز الدولة)",
-        "label-resume": "تحميل السيرة الذاتية (PDF)",
-        "label-experience": "سنوات الخبرة",
-        "select-sector-placeholder": "اختر القطاع الخاص بك...",
-        "sector-construction": "الإنشاءات والبنية التحتية",
-        "sector-hospitality": "الضيافة والسياحة",
-        "sector-services": "الخدمات والصيانة المرافق",
-        "sector-tech": "تكنولوجيا المعلومات والوظائف المهنية",
-        "footer-desc": "ربط الكفاءات العالمية بقطاع الأعمال في الخليج العربي.",
-        "footer-copy": "&copy; 2026 جي في إكس الإمارات. جميع الحقوق محفوظة. النطاق مسجل لدى jvx-emirates.com"
+        "nav-about": "من نحن",
+        "nav-services": "خدماتنا",
+        "nav-advantage": "ميزة دبي",
+        "nav-hub": "التدفق العالمي",
+        "nav-contact-link": "اتصل بنا",
+        "nav-quote": "طلب عرض سعر",
+        "hero-badge": "مركز FZCO للمناطق الحرة العالمية",
+        "hero-title": "استراتيجية عالمية. <br>بلا حدود.",
+        "hero-desc": "نربط الأسواق الدولية انطلاقاً من دبي. نقدم خدمات إدارة وسائل التواصل الاجتماعي الفائقة، والاستشارات الإدارية والاستراتيجية، والوساطة التجارية عالمياً.",
+        "hero-btn-primary": "استكشف خدماتنا",
+        "hero-btn-outline": "طلب استشارة",
+        "switcher-title": "اختر نمط الفيديو الخلفي",
+        "switcher-dubai": "منظر دبي",
+        "switcher-tech": "الشبكة الرقمية",
+        "about-badge": "من نحن",
+        "about-title": "نربط الفرص <br>على <span>مستوى عالمي</span>",
+        "about-p1": "تأسست شركة جي في إكس إنترناشيونال بيزنس (JVX International Business FZCO) برؤية تهدف لربط الفرص والشركات والأفراد عالمياً. تجسد جي في إكس مفهوماً للاندماج الذكي وتكامل الأداء والثقة لتوسيع الأعمال عابرين للحدود.",
+        "about-p2": "نعمل كجسر بين الأسواق الديناميكية ونبسط التعقيدات التشغيلية إلى حلول مرنة. مقرنا دبي، ونقوم بالفوترة الدولية والتشغيل والامتثال المالي والأمني لشركائنا حول العالم.",
+        "about-badge-desc": "مسجلة في دبي",
+        "services-title": "خبراتنا <span>الأساسية</span>",
+        "services-subtitle": "ثلاثة ركائز رئيسية من الخدمات المؤسسية المصممة لزيادة انتشارك في السوق العالمية وتحسين الكفاءة الإدارية.",
+        "service1-title": "تسويق الشبكات الاجتماعية",
+        "service1-desc": "استراتيجيات رقمية متكاملة، صناعة محتوى مميز، إدارة هوية العلامة التجارية والحملات الإعلانية الفعالة لزيادة التفاعل الدولي.",
+        "service2-title": "الاستشارات الإدارية",
+        "service2-desc": "إعادة الهيكلة الاستراتيجية للشركات، استشارات العمليات، خطط التوسع وتنسيق الفوترة الدولية والامتثال التشغيلي.",
+        "service3-title": "الوساطة التجارية",
+        "service3-desc": "وساطة الأعمال B2B وتسهيل الاستيراد والتصدير والوساطة التجارية لربط المشترين العالميين بمراكز التوريد الموثوقة.",
+        "pillar-action": "لمعرفة المزيد &rarr;",
+        "adv-visual-title": "واحة دبي للسيليكون",
+        "adv-visual-desc": "يقع مقرنا في مجمع إيفزا للأعمال (IFZA Business Park) في المنطقة الحرة الأكثر حيوية في دولة الإمارات العربية المتحدة. مركز تقني متصل بأهم العواصم العالمية.",
+        "adv-visual-link": "قم بزيارة منطقة إيفزا الحرة",
+        "adv-title": "الميزة التشغيلية <span>لشركات المنطقة الحرة</span>",
+        "adv1-title": "الضرائب المفروضة",
+        "adv1-desc": "نسبة 0% ضرائب على الشركات أو الدخل الشخصي للعمليات الخارجية والفوترة خارج الدولة.",
+        "adv2-title": "الملكية الأجنبية",
+        "adv2-desc": "ملكية كاملة بنسبة 100% لرأس المال والأصول دون الحاجة إلى وكيل أو شريك محلي إماراتي.",
+        "adv3-title": "الفوترة الخارجية",
+        "adv3-desc": "إصدار الفواتير للعملاء الدوليين تحت مظلة مصرفية آمنة وقوانين تجارية عالمية.",
+        "adv4-title": "رخصة بريميوم",
+        "adv4-desc": "تسجيل FZCO معتمد ومنظم من قبل سلطة المنطقة الحرة الدولية (IFZA) في واحة دبي للسيليكون.",
+        "hub-title": "تدفق الفوترة <span>العالمي الموحد</span>",
+        "hub-subtitle": "كيف تعمل شركة جي في إكس كجسر استراتيجي: استقبال رأس المال الأجنبي، إدارة المشروعات، والفوترة الآمنة من دبي.",
+        "hub1-title": "عملاء عالميون",
+        "hub1-desc": "الشركات في أوروبا أو الأمريكتين أو آسيا التي تتعاقد على خدمات التسويق أو الاستشارات أو التجارة.",
+        "hub2-title": "جي في إكس دبي FZCO",
+        "hub2-desc": "الجهة المتعاقدة، الإدارة المؤسسية، إصدار الفواتير الآمنة، وإدارة الامتثال التجاري والمالي.",
+        "hub3-title": "تقديم الخدمة",
+        "hub3-desc": "حملات وسائل التواصل الاجتماعي، الاستشارات الاستراتيجية، والوساطة التجارية المنفذة عالمياً.",
+        "contact-title": "لنصنع <span>التناغم معاً</span>",
+        "contact-desc": "جاهز لتوسيع نطاق تسويقك، أو مراجعة هياكلك التنظيمية الدولية، أو استكشاف قنوات الوساطة التجارية؟ اتصل بنا اليوم للحصول على مقترح مخصص.",
+        "form-title": "طلب مقترح مشروع",
+        "form-subtitle": "املاً التفاصيل أدناه وسيقوم فريقنا بإعداد مقترح هيكلي مخصص لمشروعك.",
+        "form-label-name": "الاسم الكامل",
+        "form-label-company": "اسم الشركة",
+        "form-label-email": "البريد الإلكتروني للعمل",
+        "form-label-service": "الخدمة المطلوبة",
+        "form-label-message": "تفاصيل المشروع أو نطاق العمل",
+        "form-select-placeholder": "اختر مجال الخدمة...",
+        "form-opt-marketing": "خدمات التسويق الرقمي وإدارة المنصات",
+        "form-opt-consulting": "الاستشارات الإدارية والتنظيمية للشركات",
+        "form-opt-brokerage": "خدمات الوساطة التجارية وإدارة التجارة B2B",
+        "form-btn-submit": "إرسال الطلب",
+        "footer-desc": "جي في إكس إنترناشيونال بيزنس FZCO. نربط الأعمال العالمية بخدمات الوساطة التجارية الفاخرة، الاستشارات الإدارية، والتسويق الرقمي من دبي.",
+        "footer-header-links": "الروابط",
+        "footer-header-services": "الخدمات",
+        "footer-copy": "&copy; 2026 جي في إكس إنترناشيونال بيزنس - FZCO. جميع الحقوق محفوظة. مسجلة في واحة دبي للسيليكون، إيفزا."
     }
 };
 
@@ -143,7 +212,7 @@ function setLanguage(lang) {
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
     
-    // Update active button state
+    // Update active button state in the navigation bar
     document.querySelectorAll('.lang-btn').forEach(btn => {
         if (btn.getAttribute('data-lang') === lang) {
             btn.classList.add('active');
@@ -152,7 +221,7 @@ function setLanguage(lang) {
         }
     });
 
-    // Translate texts
+    // Translate all textual elements with data-translate attribute
     const elementsToTranslate = document.querySelectorAll('[data-translate]');
     elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
@@ -161,21 +230,41 @@ function setLanguage(lang) {
         }
     });
 
-    // Translate inputs / placeholders
-    const placeholdersToTranslate = document.querySelectorAll('[data-translate-placeholder]');
-    placeholdersToTranslate.forEach(element => {
-        const key = element.getAttribute('data-translate-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-            element.setAttribute('placeholder', translations[lang][key]);
+    // Update input placeholders if they have translation configurations
+    const inputPlaceholders = {
+        en: {
+            "contact-name": "John Doe",
+            "contact-company": "Global Corp",
+            "contact-email": "john@globalcorp.com",
+            "contact-message": "Briefly describe your objectives, target markets, or trade volume..."
+        },
+        pt: {
+            "contact-name": "João Silva",
+            "contact-company": "Empresa Global S.A.",
+            "contact-email": "joao@empresaglobal.com",
+            "contact-message": "Descreva brevemente seus objetivos, mercados-alvo ou volume comercial..."
+        },
+        ar: {
+            "contact-name": "أحمد علي",
+            "contact-company": "الشركة العالمية",
+            "contact-email": "ahmed@globalcorp.com",
+            "contact-message": "يرجى وصف أهدافك، أسواقك المستهدفة، أو حجم التجارة باختصار..."
         }
-    });
+    };
+
+    for (const [id, placeholderText] of Object.entries(inputPlaceholders[lang])) {
+        const inputElement = document.getElementById(id);
+        if (inputElement) {
+            inputElement.setAttribute('placeholder', placeholderText);
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial Translation Setup
+    // Initial translation setup
     setLanguage('en');
 
-    // Language Buttons Listeners
+    // Language buttons click handlers
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -184,58 +273,369 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form Submissions
-    const clientForm = document.getElementById('client-form');
-    if (clientForm) {
-        clientForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = clientForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-            submitBtn.disabled = true;
-            
-            let submitText = 'Submitting...';
-            if (currentLang === 'pt') submitText = 'Enviando...';
-            else if (currentLang === 'ar') submitText = 'جاري الإرسال...';
-            
-            submitBtn.innerText = submitText;
-            
-            setTimeout(() => {
-                let successMsg = 'Inquiry submitted successfully! JVX Emirates team will contact you.';
-                if (currentLang === 'pt') successMsg = 'Solicitação enviada com sucesso! A equipe da JVX Emirates entrará em contato.';
-                else if (currentLang === 'ar') successMsg = 'تم إرسال طلبك بنجاح! سيتواصل معك فريق جي في إكس الإمارات قريباً.';
-                
-                alert(successMsg);
-                clientForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            }, 1500);
+    // Scrolled Header Navigation transition effect
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Generative Canvas Background System (Cinematic Ken Burns & Particle Overlays)
+    const canvas = document.getElementById('hero-canvas');
+    const btnDubai = document.getElementById('btn-vid-dubai');
+    const btnTech = document.getElementById('btn-vid-tech');
+    const heroSection = document.getElementById('home');
+
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        let currentMode = 'dubai'; // 'dubai' or 'tech'
+        let animationFrameId;
+
+        // Load background images for canvas drawing
+        const imgDubai = new Image();
+        imgDubai.src = 'assets/images/dubai-skyline.png';
+
+        const imgTech = new Image();
+        imgTech.src = 'assets/images/digital-network.png';
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initAssets();
         });
+
+        // Mouse tracking
+        const mouse = { x: null, y: null, radius: 180 };
+        window.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Brand colors definitions
+        const tealColor = '#042736';
+        const goldColor = '#Af8848';
+
+        // Dynamic static background fallback swap immediately
+        const staticBackgrounds = {
+            dubai: "url('assets/images/dubai-skyline.png')",
+            tech: "url('assets/images/digital-network.png')"
+        };
+
+        // Network Mode assets
+        let particles = [];
+        const maxParticles = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.9;
+                this.vy = (Math.random() - 0.5) * 0.9;
+                this.radius = Math.random() * 2 + 1.5;
+                this.color = Math.random() > 0.4 ? goldColor : '#ffffff';
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                // Mouse interaction (hover push)
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < mouse.radius) {
+                        const force = (mouse.radius - dist) / mouse.radius;
+                        this.x += (dx / dist) * force * 2;
+                        this.y += (dy / dist) * force * 2;
+                    }
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Dubai Mode assets: Twinkling city window lights
+        let cityLights = [];
+        const maxLights = 40;
+
+        class CityLight {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = height * 0.35 + Math.random() * (height * 0.5); // Center on horizon skyline area
+                this.size = Math.random() * 2 + 1;
+                this.alpha = Math.random();
+                this.speed = Math.random() * 0.02 + 0.005;
+                this.grow = true;
+            }
+            update() {
+                if (this.grow) {
+                    this.alpha += this.speed;
+                    if (this.alpha >= 1) this.grow = false;
+                } else {
+                    this.alpha -= this.speed;
+                    if (this.alpha <= 0.1) this.grow = true;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = goldColor;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(211, 181, 132, ${this.alpha * 0.6})`;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Shooting stars for cinematic feeling
+        let shootingStars = [];
+        const maxStars = 3;
+
+        class ShootingStar {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * (width * 0.6);
+                this.y = Math.random() * (height * 0.3);
+                this.speed = Math.random() * 3 + 2.5;
+                this.length = Math.random() * 80 + 50;
+                this.alpha = 0;
+                this.fadeSpeed = 0.015;
+                this.state = 'fadein'; // 'fadein', 'fadeout'
+            }
+            update() {
+                this.x += this.speed;
+                this.y += this.speed * 0.55;
+
+                if (this.state === 'fadein') {
+                    this.alpha += this.fadeSpeed;
+                    if (this.alpha >= 0.75) this.state = 'fadeout';
+                } else {
+                    this.alpha -= this.fadeSpeed;
+                    if (this.alpha <= 0) this.reset();
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.strokeStyle = `rgba(175, 136, 72, ${this.alpha})`;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x - this.length, this.y - this.length * 0.55);
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+
+        // Vertically rising particles representing digital data beams
+        let beams = [];
+        const maxBeams = 35;
+        class Beam {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 100;
+                this.speed = Math.random() * 1.5 + 0.5;
+                this.length = Math.random() * 50 + 25;
+                this.color = Math.random() > 0.5 ? goldColor : tealColor;
+            }
+            update() {
+                this.y -= this.speed;
+                if (this.y < -50) {
+                    this.y = height + Math.random() * 50;
+                    this.x = Math.random() * width;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.strokeStyle = this.color;
+                ctx.globalAlpha = 0.28;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x, this.y - this.length);
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+
+        function initAssets() {
+            // Setup particles for tech network
+            particles = [];
+            for (let i = 0; i < maxParticles; i++) {
+                particles.push(new Particle());
+            }
+
+            // Setup city lights for dubai skyline
+            cityLights = [];
+            for (let i = 0; i < maxLights; i++) {
+                cityLights.push(new CityLight());
+            }
+
+            // Setup shooting stars
+            shootingStars = [];
+            for (let i = 0; i < maxStars; i++) {
+                shootingStars.push(new ShootingStar());
+            }
+
+            // Setup beams
+            beams = [];
+            for (let i = 0; i < maxBeams; i++) {
+                beams.push(new Beam());
+            }
+        }
+
+        initAssets();
+
+        // Main Animation Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            // 1. RENDER CINEMATIC ZOOM & PAN BACKGROUND (Ken Burns Effect)
+            const activeImg = currentMode === 'tech' ? imgTech : imgDubai;
+            
+            if (activeImg.complete && activeImg.naturalWidth !== 0) {
+                let scaleTime = Date.now() * 0.00018; // Very slow time multiplier
+                let scale = 1.05 + Math.sin(scaleTime) * 0.05; // Zoom range: 1.00 to 1.10
+                let dx = Math.cos(scaleTime * 0.8) * 16;       // Horizontal pan
+                let dy = Math.sin(scaleTime * 0.6) * 10;       // Vertical pan
+
+                ctx.save();
+                ctx.translate(width / 2 + dx, height / 2 + dy);
+                ctx.scale(scale, scale);
+                ctx.drawImage(activeImg, -width / 2, -height / 2, width, height);
+                ctx.restore();
+            }
+
+            // 2. RENDER OVERLAYS
+            if (currentMode === 'tech') {
+                // RENDER PLEXUS DIGITAL NETWORK
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                // Draw connecting lines
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 135) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            const alpha = (135 - dist) / 135 * 0.18;
+                            ctx.strokeStyle = `rgba(175, 136, 72, ${alpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            } else if (currentMode === 'dubai') {
+                // RENDER ACTIVE DUBAI SKYLINE LAYERS
+                
+                // Twinkling windows on skyline area
+                cityLights.forEach(light => {
+                    light.update();
+                    light.draw();
+                });
+
+                // Shooting stars in the sky
+                shootingStars.forEach(star => {
+                    star.update();
+                    star.draw();
+                });
+
+                // Vertical data beams
+                beams.forEach(b => {
+                    b.update();
+                    b.draw();
+                });
+            }
+
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Switcher implementation
+        function changeBackground(type) {
+            currentMode = type;
+            
+            // Update static fallback background on the section container immediately
+            if (heroSection) {
+                heroSection.style.backgroundImage = staticBackgrounds[type];
+            }
+        }
+
+        if (btnDubai && btnTech) {
+            btnDubai.addEventListener('click', () => {
+                if (btnDubai.classList.contains('active')) return;
+                btnTech.classList.remove('active');
+                btnDubai.classList.add('active');
+                changeBackground('dubai');
+            });
+
+            btnTech.addEventListener('click', () => {
+                if (btnTech.classList.contains('active')) return;
+                btnDubai.classList.remove('active');
+                btnTech.classList.add('active');
+                changeBackground('tech');
+            });
+        }
     }
 
-    const candidateForm = document.getElementById('candidate-form');
-    if (candidateForm) {
-        candidateForm.addEventListener('submit', (e) => {
+    // Unified Proposal Form Submission simulation
+    const proposalForm = document.getElementById('proposal-form');
+    if (proposalForm) {
+        proposalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const submitBtn = candidateForm.querySelector('button[type="submit"]');
+            const submitBtn = proposalForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerText;
             submitBtn.disabled = true;
-            
-            let submitText = 'Applying...';
-            if (currentLang === 'pt') submitText = 'Candidatando-se...';
-            else if (currentLang === 'ar') submitText = 'جاري التقديم...';
-            
-            submitBtn.innerText = submitText;
-            
+
+            let loadingText = 'Sending to info@jvx-emirates.com...';
+            if (currentLang === 'pt') loadingText = 'Enviando para info@jvx-emirates.com...';
+            else if (currentLang === 'ar') loadingText = 'جاري الإرسال إلى info@jvx-emirates.com...';
+
+            submitBtn.innerText = loadingText;
+
+            // Simulate server network latency
             setTimeout(() => {
-                let successMsg = 'Application submitted successfully! Welcome to the recruitment pool.';
-                if (currentLang === 'pt') successMsg = 'Candidatura enviada com sucesso! Bem-vindo ao banco de talentos.';
-                else if (currentLang === 'ar') successMsg = 'تم تقديم طلبك بنجاح! مرحباً بك في قاعدة بيانات التوظيف.';
-                
+                let successMsg = 'Inquiry submitted successfully! A proposal details notification has been dispatched to info@jvx-emirates.com. Our experts will contact you within 24 hours.';
+                if (currentLang === 'pt') {
+                    successMsg = 'Solicitação enviada com sucesso! As especificações da proposta foram encaminhadas para info@jvx-emirates.com. Nossos especialistas entrarão em contato em até 24 horas.';
+                } else if (currentLang === 'ar') {
+                    successMsg = 'تم إرسال الطلب بنجاح! تم إرسال تفاصيل المقترح إلى info@jvx-emirates.com. سيتصل بك خبراؤنا خلال 24 ساعة.';
+                }
+
                 alert(successMsg);
-                candidateForm.reset();
+                proposalForm.reset();
                 submitBtn.disabled = false;
                 submitBtn.innerText = originalText;
-            }, 1500);
+            }, 1800);
         });
     }
 });
