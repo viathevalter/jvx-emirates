@@ -35,6 +35,11 @@
                 <li><a href="#advantage" data-translate="nav-advantage">Dubai Advantage</a></li>
                 <li><a href="#hub" data-translate="nav-hub">Global Flow</a></li>
                 <li><a href="#contact" data-translate="nav-contact-link">Contact</a></li>
+                <li class="mobile-only-action">
+                    <button class="btn-primary" style="width: 100%; margin-top: 1rem;" data-translate="nav-quote" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get Proposal
+                    </button>
+                </li>
             </ul>
 
             <div class="nav-actions">
@@ -47,6 +52,13 @@
                     Get Proposal
                 </button>
             </div>
+
+            <!-- Mobile menu toggle button -->
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 

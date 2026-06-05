@@ -1299,4 +1299,122 @@ footer {
         text-align: center;
         gap: 1.5rem;
     }
+
+    .logo svg {
+        width: 140px;
+        height: auto;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Navigation Button (Default Hidden) */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.mobile-nav-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+.mobile-only-action {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-actions {
+        margin-inline-start: auto;
+    }
+
+    .nav-actions .btn-contact {
+        display: none; /* Hide big contact button in header actions on mobile */
+    }
+
+    .mobile-only-action {
+        display: block;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(2, 13, 18, 0.98);
+        border-bottom: 1px solid var(--border-glass);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 99;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    [dir="rtl"] .nav-menu li {
+        text-align: right;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(175, 136, 72, 0.1);
+        width: 100%;
+    }
+
+    .nav-menu a:hover {
+        color: var(--brand-gold);
+    }
+
+    .mobile-nav-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
