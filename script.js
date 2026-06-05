@@ -479,6 +479,118 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // relative road paths for traffic simulation
+        const mainRoadRelative = [
+            { u: 0.02, v: 0.88 },
+            { u: 0.12, v: 0.80 },
+            { u: 0.22, v: 0.74 },
+            { u: 0.32, v: 0.70 },
+            { u: 0.42, v: 0.71 },
+            { u: 0.52, v: 0.72 },
+            { u: 0.62, v: 0.68 },
+            { u: 0.72, v: 0.60 },
+            { u: 0.82, v: 0.52 },
+            { u: 0.92, v: 0.45 }
+        ];
+
+        const bgRoadRelative = [
+            { u: 0.10, v: 0.62 },
+            { u: 0.25, v: 0.60 },
+            { u: 0.40, v: 0.59 },
+            { u: 0.55, v: 0.58 },
+            { u: 0.70, v: 0.56 },
+            { u: 0.85, v: 0.55 }
+        ];
+
+        let mainRoadPoints = [];
+        let bgRoadPoints = [];
+        let trafficStreaks = [];
+
+        function getPointOnPath(path, t) {
+            if (path.length === 0) return { x: 0, y: 0 };
+            if (path.length === 1) return { x: path[0].x, y: path[0].y };
+            
+            const segmentCount = path.length - 1;
+            const scaledT = t * segmentCount;
+            const index = Math.min(Math.floor(scaledT), segmentCount - 1);
+            const localT = scaledT - index;
+            
+            const p1 = path[index];
+            const p2 = path[index + 1];
+            
+            return {
+                x: p1.x + (p2.x - p1.x) * localT,
+                y: p1.y + (p2.y - p1.y) * localT
+            };
+        }
+
+        class TrafficStreak {
+            constructor(pathName, laneDirection, color, speed, size, trailLength, offset) {
+                this.pathName = pathName;
+                this.laneDirection = laneDirection;
+                this.color = color;
+                this.speed = speed;
+                this.size = size;
+                this.trailLength = trailLength;
+                this.offset = offset;
+                this.progress = Math.random();
+            }
+            update() {
+                this.progress += this.speed * this.laneDirection;
+                if (this.progress > 1) {
+                    this.progress = 0;
+                } else if (this.progress < 0) {
+                    this.progress = 1;
+                }
+            }
+            draw(pathPoints) {
+                if (pathPoints.length < 2) return;
+                const tCurr = this.progress;
+                const tPrev = Math.max(0, Math.min(1, tCurr - this.laneDirection * this.trailLength));
+                
+                const pCurr = getPointOnPath(pathPoints, tCurr);
+                const pPrev = getPointOnPath(pathPoints, tPrev);
+                
+                const getOffsetPt = (p, t) => {
+                    const segmentCount = pathPoints.length - 1;
+                    const scaledT = t * segmentCount;
+                    const index = Math.min(Math.floor(scaledT), segmentCount - 1);
+                    const p1 = pathPoints[index];
+                    const p2 = pathPoints[index + 1];
+                    const dx = p2.x - p1.x;
+                    const dy = p2.y - p1.y;
+                    const len = Math.sqrt(dx * dx + dy * dy);
+                    let nx = 0, ny = 0;
+                    if (len > 0) {
+                        nx = -dy / len;
+                        ny = dx / len;
+                    }
+                    return {
+                        x: p.x + nx * this.offset,
+                        y: p.y + ny * this.offset
+                    };
+                };
+                
+                const ptCurr = getOffsetPt(pCurr, tCurr);
+                const ptPrev = getOffsetPt(pPrev, tPrev);
+                
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(ptPrev.x, ptPrev.y);
+                ctx.lineTo(ptCurr.x, ptCurr.y);
+                
+                ctx.strokeStyle = this.color;
+                ctx.lineWidth = this.size;
+                ctx.lineCap = 'round';
+                
+                ctx.shadowBlur = this.size * 3.5;
+                ctx.shadowColor = this.color;
+                
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+
         function initAssets() {
             // Setup particles for tech network
             particles = [];
@@ -503,6 +615,50 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < maxBeams; i++) {
                 beams.push(new Beam());
             }
+
+            // Recalculate road coordinates based on current canvas dimensions
+            mainRoadPoints = mainRoadRelative.map(pt => ({
+                x: (pt.u - 0.5) * width,
+                y: (pt.v - 0.5) * height
+            }));
+
+            bgRoadPoints = bgRoadRelative.map(pt => ({
+                x: (pt.u - 0.5) * width,
+                y: (pt.v - 0.5) * height
+            }));
+
+            // Initialize traffic streaks
+            trafficStreaks = [];
+            
+            // 1. Foreground Sheikh Zayed Road (24 vehicles total)
+            for (let i = 0; i < 12; i++) {
+                // Forward headlights (warm gold/white)
+                const speed1 = Math.random() * 0.0006 + 0.0014;
+                const size1 = Math.random() * 0.6 + 2.0;
+                const trail1 = Math.random() * 0.015 + 0.022;
+                trafficStreaks.push(new TrafficStreak('main', 1, 'rgba(255, 230, 160, 0.95)', speed1, size1, trail1, -2.8));
+                
+                // Backward taillights (intense red-orange)
+                const speed2 = Math.random() * 0.0006 + 0.0014;
+                const size2 = Math.random() * 0.6 + 2.0;
+                const trail2 = Math.random() * 0.015 + 0.022;
+                trafficStreaks.push(new TrafficStreak('main', -1, 'rgba(255, 80, 50, 0.95)', speed2, size2, trail2, 2.8));
+            }
+
+            // 2. Background Highway (16 vehicles total)
+            for (let i = 0; i < 8; i++) {
+                // Forward headlights (soft warm gold)
+                const speed1 = Math.random() * 0.0004 + 0.0008;
+                const size1 = Math.random() * 0.4 + 1.1;
+                const trail1 = Math.random() * 0.01 + 0.015;
+                trafficStreaks.push(new TrafficStreak('bg', 1, 'rgba(255, 220, 140, 0.85)', speed1, size1, trail1, -1.8));
+
+                // Backward taillights (soft red)
+                const speed2 = Math.random() * 0.0004 + 0.0008;
+                const size2 = Math.random() * 0.4 + 1.1;
+                const trail2 = Math.random() * 0.01 + 0.015;
+                trafficStreaks.push(new TrafficStreak('bg', -1, 'rgba(255, 70, 40, 0.85)', speed2, size2, trail2, 1.8));
+            }
         }
 
         initAssets();
@@ -524,6 +680,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.translate(width / 2 + dx, height / 2 + dy);
                 ctx.scale(scale, scale);
                 ctx.drawImage(activeImg, -width / 2, -height / 2, width, height);
+
+                // Draw moving vehicle light trails on the highways
+                if (currentMode === 'dubai') {
+                    trafficStreaks.forEach(streak => {
+                        streak.update();
+                        const points = streak.pathName === 'main' ? mainRoadPoints : bgRoadPoints;
+                        streak.draw(points);
+                    });
+                }
+
                 ctx.restore();
             }
 
