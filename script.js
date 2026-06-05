@@ -479,31 +479,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // relative road paths for traffic simulation
-        const mainRoadRelative = [
-            { u: 0.02, v: 0.88 },
-            { u: 0.12, v: 0.80 },
-            { u: 0.22, v: 0.74 },
-            { u: 0.32, v: 0.70 },
-            { u: 0.42, v: 0.71 },
-            { u: 0.52, v: 0.72 },
-            { u: 0.62, v: 0.68 },
-            { u: 0.72, v: 0.60 },
-            { u: 0.82, v: 0.52 },
-            { u: 0.92, v: 0.45 }
+        // relative road paths for traffic simulation (perfectly aligned with image roads)
+        const leftBridgeRelative = [
+            { u: 0.04, v: 0.78 },
+            { u: 0.12, v: 0.75 },
+            { u: 0.20, v: 0.73 },
+            { u: 0.28, v: 0.72 }
         ];
 
-        const bgRoadRelative = [
-            { u: 0.10, v: 0.62 },
-            { u: 0.25, v: 0.60 },
-            { u: 0.40, v: 0.59 },
-            { u: 0.55, v: 0.58 },
-            { u: 0.70, v: 0.56 },
-            { u: 0.85, v: 0.55 }
+        const mainHighwayRelative = [
+            { u: 0.35, v: 0.78 },
+            { u: 0.40, v: 0.82 },
+            { u: 0.46, v: 0.85 },
+            { u: 0.52, v: 0.86 },
+            { u: 0.58, v: 0.85 },
+            { u: 0.65, v: 0.82 },
+            { u: 0.72, v: 0.78 },
+            { u: 0.80, v: 0.73 },
+            { u: 0.88, v: 0.68 },
+            { u: 0.96, v: 0.64 }
         ];
 
-        let mainRoadPoints = [];
-        let bgRoadPoints = [];
+        let leftBridgePoints = [];
+        let mainHighwayPoints = [];
         let trafficStreaks = [];
 
         function getPointOnPath(path, t) {
@@ -617,12 +615,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Recalculate road coordinates based on current canvas dimensions
-            mainRoadPoints = mainRoadRelative.map(pt => ({
+            leftBridgePoints = leftBridgeRelative.map(pt => ({
                 x: (pt.u - 0.5) * width,
                 y: (pt.v - 0.5) * height
             }));
 
-            bgRoadPoints = bgRoadRelative.map(pt => ({
+            mainHighwayPoints = mainHighwayRelative.map(pt => ({
                 x: (pt.u - 0.5) * width,
                 y: (pt.v - 0.5) * height
             }));
@@ -630,34 +628,34 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize traffic streaks
             trafficStreaks = [];
             
-            // 1. Foreground Sheikh Zayed Road (24 vehicles total)
-            for (let i = 0; i < 12; i++) {
+            // 1. Left Bridge Traffic (10 vehicles total, smaller because of distance)
+            for (let i = 0; i < 5; i++) {
                 // Forward headlights (warm gold/white)
-                const speed1 = Math.random() * 0.0006 + 0.0014;
-                const size1 = Math.random() * 0.6 + 2.0;
-                const trail1 = Math.random() * 0.015 + 0.022;
-                trafficStreaks.push(new TrafficStreak('main', 1, 'rgba(255, 230, 160, 0.95)', speed1, size1, trail1, -2.8));
+                const speed1 = Math.random() * 0.0004 + 0.0010;
+                const size1 = Math.random() * 0.4 + 1.2;
+                const trail1 = Math.random() * 0.02 + 0.03;
+                trafficStreaks.push(new TrafficStreak('bridge', 1, 'rgba(255, 230, 160, 0.90)', speed1, size1, trail1, -1.8));
                 
-                // Backward taillights (intense red-orange)
-                const speed2 = Math.random() * 0.0006 + 0.0014;
-                const size2 = Math.random() * 0.6 + 2.0;
-                const trail2 = Math.random() * 0.015 + 0.022;
-                trafficStreaks.push(new TrafficStreak('main', -1, 'rgba(255, 80, 50, 0.95)', speed2, size2, trail2, 2.8));
+                // Backward taillights (soft red)
+                const speed2 = Math.random() * 0.0004 + 0.0010;
+                const size2 = Math.random() * 0.4 + 1.2;
+                const trail2 = Math.random() * 0.02 + 0.03;
+                trafficStreaks.push(new TrafficStreak('bridge', -1, 'rgba(255, 80, 50, 0.90)', speed2, size2, trail2, 1.8));
             }
 
-            // 2. Background Highway (16 vehicles total)
-            for (let i = 0; i < 8; i++) {
-                // Forward headlights (soft warm gold)
-                const speed1 = Math.random() * 0.0004 + 0.0008;
-                const size1 = Math.random() * 0.4 + 1.1;
-                const trail1 = Math.random() * 0.01 + 0.015;
-                trafficStreaks.push(new TrafficStreak('bg', 1, 'rgba(255, 220, 140, 0.85)', speed1, size1, trail1, -1.8));
+            // 2. Main Right Highway (24 vehicles total, larger and faster in foreground)
+            for (let i = 0; i < 12; i++) {
+                // Forward headlights (warm gold/white)
+                const speed1 = Math.random() * 0.0006 + 0.0016;
+                const size1 = Math.random() * 0.6 + 2.0;
+                const trail1 = Math.random() * 0.015 + 0.025;
+                trafficStreaks.push(new TrafficStreak('main', 1, 'rgba(255, 230, 160, 0.95)', speed1, size1, trail1, -2.8));
 
-                // Backward taillights (soft red)
-                const speed2 = Math.random() * 0.0004 + 0.0008;
-                const size2 = Math.random() * 0.4 + 1.1;
-                const trail2 = Math.random() * 0.01 + 0.015;
-                trafficStreaks.push(new TrafficStreak('bg', -1, 'rgba(255, 70, 40, 0.85)', speed2, size2, trail2, 1.8));
+                // Backward taillights (intense red-orange)
+                const speed2 = Math.random() * 0.0006 + 0.0016;
+                const size2 = Math.random() * 0.6 + 2.0;
+                const trail2 = Math.random() * 0.015 + 0.025;
+                trafficStreaks.push(new TrafficStreak('main', -1, 'rgba(255, 80, 50, 0.95)', speed2, size2, trail2, 2.8));
             }
         }
 
@@ -685,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentMode === 'dubai') {
                     trafficStreaks.forEach(streak => {
                         streak.update();
-                        const points = streak.pathName === 'main' ? mainRoadPoints : bgRoadPoints;
+                        const points = streak.pathName === 'main' ? mainHighwayPoints : leftBridgePoints;
                         streak.draw(points);
                     });
                 }
