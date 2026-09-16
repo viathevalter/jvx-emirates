@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../../i18n';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { JvxLogo } from '../common/JvxLogo';
 import type { Language } from '../../types';
 
@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
             className="flex items-center group focus:outline-none py-1 shrink-0"
             aria-label="JVX International Business"
           >
-            <JvxLogo variant="white-gold" className="h-9 sm:h-10 md:h-11 w-auto group-hover:opacity-90 transition-opacity" />
+            <JvxLogo variant="white-gold" className="h-8 sm:h-9 md:h-11 w-auto group-hover:opacity-90 transition-opacity" />
           </a>
 
           {/* Desktop Navigation */}
@@ -123,85 +123,125 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
             </button>
           </div>
 
-          {/* Mobile Menu Button & Lang Switcher */}
-          <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
-            <div className="flex items-center border border-navy-700 bg-navy-900/90 rounded px-1.5 py-1 text-xs">
-              {(['en', 'pt', 'es', 'ar'] as Language[]).map((lang, idx) => (
-                <React.Fragment key={lang}>
-                  {idx > 0 && <span className="text-navy-600 mx-0.5 text-[10px]">|</span>}
-                  <button
-                    type="button"
-                    onClick={() => setLanguage(lang)}
-                    className={`px-1 py-0.5 uppercase text-[10px] sm:text-[11px] font-medium transition-colors ${
-                      language === lang ? 'text-gold-300 font-bold bg-navy-800 rounded' : 'text-slate-400'
-                    }`}
-                  >
-                    {lang}
-                  </button>
-                </React.Fragment>
-              ))}
+          {/* Mobile Right Controls: Compact Language Selector & Hamburger Button */}
+          <div className="flex items-center gap-2 sm:gap-2.5 lg:hidden shrink-0">
+            {/* Compact Mobile Language Selector Badge */}
+            <div className="relative flex items-center">
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-navy-900/90 border border-navy-700 text-slate-200 hover:border-gold-400/60 transition-colors cursor-pointer shadow-sm">
+                <Globe className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <span className="text-[11px] font-bold uppercase tracking-wider text-gold-300">
+                  {language}
+                </span>
+                <ChevronDown className="w-3 h-3 text-slate-400 shrink-0" />
+              </div>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value as Language)}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-base"
+                aria-label="Select language"
+              >
+                <option value="pt" className="bg-[#040E16] text-white">Português (PT)</option>
+                <option value="es" className="bg-[#040E16] text-white">Español (ES)</option>
+                <option value="en" className="bg-[#040E16] text-white">English (EN)</option>
+                <option value="ar" className="bg-[#040E16] text-white">العربية (AR)</option>
+              </select>
             </div>
 
+            {/* Mobile Menu Hamburger / Close Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-white border border-navy-700 bg-navy-900/80 rounded focus:outline-none cursor-pointer"
+              className="p-2 text-slate-300 hover:text-white border border-navy-700 bg-navy-900/90 rounded focus:outline-none cursor-pointer transition-colors shrink-0"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-gold-400" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-gold-400" /> : <Menu className="w-5 h-5 text-slate-200" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#040E16]/98 border-b border-navy-800 px-6 pt-4 pb-8 space-y-4 shadow-2xl backdrop-blur-xl animate-fadeIn">
-          <div className="flex flex-col space-y-3 pt-2">
+        <div className="lg:hidden bg-[#040E16]/98 border-b border-navy-800 px-5 sm:px-6 pt-3 pb-8 space-y-5 shadow-2xl backdrop-blur-2xl animate-fadeIn">
+          {/* Navigation Links */}
+          <div className="flex flex-col space-y-1">
             <button
               onClick={() => handleNavClick('services')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.services}
             </button>
             <button
               onClick={() => handleNavClick('approach')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.howItWorks}
             </button>
             <button
               onClick={() => handleNavClick('model')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.operatingModel}
             </button>
             <button
               onClick={() => handleNavClick('why-jvx')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.whyJvx}
             </button>
             <button
               onClick={() => handleNavClick('dubai')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.dubaiBase}
             </button>
             <button
               onClick={() => handleNavClick('global-flow')}
-              className="text-left rtl:text-right text-sm uppercase tracking-wider text-gold-400 hover:text-white py-2 border-b border-navy-900"
+              className="text-left rtl:text-right text-xs uppercase tracking-[0.14em] text-slate-200 hover:text-gold-400 py-3 border-b border-navy-900/80 transition-colors cursor-pointer"
             >
               {t.nav.globalFlow}
             </button>
           </div>
 
-          <div className="pt-4">
+          {/* Dedicated Full Language Switcher inside Drawer */}
+          <div className="pt-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-2">
+              Language / Idioma
+            </span>
+            <div className="grid grid-cols-4 gap-2 bg-navy-950 p-1.5 rounded-lg border border-navy-800">
+              {(
+                [
+                  { code: 'pt', label: 'PT' },
+                  { code: 'es', label: 'ES' },
+                  { code: 'en', label: 'EN' },
+                  { code: 'ar', label: 'العربية' },
+                ] as const
+              ).map(({ code, label }) => (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => {
+                    setLanguage(code);
+                  }}
+                  className={`py-2 text-xs font-bold uppercase rounded transition-all cursor-pointer ${
+                    language === code
+                      ? 'bg-gold-500 text-navy-950 shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-navy-900'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile CTA Button */}
+          <div className="pt-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full py-3 text-center text-xs font-semibold tracking-wider uppercase bg-gold-500 text-navy-950 hover:bg-gold-400 rounded transition-colors shadow-lg"
+              className="w-full py-3.5 text-center text-xs font-bold tracking-[0.16em] uppercase bg-gold-500 text-navy-950 hover:bg-gold-400 transition-colors shadow-lg cursor-pointer"
             >
               {t.nav.contact}
             </button>

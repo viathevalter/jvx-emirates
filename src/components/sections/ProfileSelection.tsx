@@ -24,7 +24,7 @@ export const ProfileSelection: React.FC<ProblemSectionProps> = ({ onExploreServi
   };
 
   return (
-    <section id="problem" className="relative py-24 bg-[#05131C] border-t border-navy-800/80">
+    <section id="problem" className="relative py-24 bg-[#05131C] border-t border-navy-800/80 overflow-hidden">
       {/* Background Architectural Watermark */}
       <div className="absolute top-0 right-8 text-[160px] font-serif font-black text-navy-900/20 select-none pointer-events-none -translate-y-16">
         JVX
