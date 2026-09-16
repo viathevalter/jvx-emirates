@@ -73,7 +73,7 @@ export const JvxApproach: React.FC = () => {
     <section
       id="approach"
       ref={sectionRef}
-      className="relative bg-[#040E16] border-t border-navy-800 h-[280vh] md:h-[300vh]"
+      className="relative bg-[#040E16] border-t border-navy-800 h-[200vh] md:h-[220vh] scroll-mt-20"
     >
       {/* Background Architectural Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-10">

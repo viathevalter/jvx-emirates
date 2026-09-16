@@ -36,7 +36,7 @@ function MainWebsite() {
   };
 
   return (
-    <div className="min-h-screen bg-[#040E16] text-[#E7EEF3] flex flex-col selection:bg-gold-500 selection:text-navy-950 font-sans">
+    <div className="min-h-screen bg-[#040E16] text-[#E7EEF3] flex flex-col selection:bg-gold-500 selection:text-navy-950 font-sans overflow-x-clip">
       
       {/* Sticky Header with Language Switcher and Talk to JVX CTA */}
       <Header
