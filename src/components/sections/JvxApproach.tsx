@@ -88,10 +88,10 @@ export const JvxApproach: React.FC = () => {
       </div>
 
       {/* Sticky Screen-Locked Stage Experience */}
-      <div className="sticky top-16 md:top-20 min-h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex flex-col justify-center py-8 md:py-0 px-4 sm:px-6 lg:px-8 xl:px-6 max-w-7xl xl:max-w-[1360px] 2xl:max-w-[1440px] mx-auto w-full z-10">
+      <div className="sticky top-16 md:top-20 min-h-[calc(100vh-5rem)] flex flex-col justify-center py-6 sm:py-8 px-4 sm:px-6 lg:px-8 xl:px-6 max-w-7xl xl:max-w-[1360px] 2xl:max-w-[1440px] mx-auto w-full z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-6 md:mb-12">
+        <div className="max-w-3xl mb-4 sm:mb-6 md:mb-8">
           <div className="inline-flex items-center mb-2.5 sm:mb-3">
             <GoldBadge>{t.approach.sectionTag}</GoldBadge>
           </div>
@@ -104,7 +104,7 @@ export const JvxApproach: React.FC = () => {
         </div>
 
         {/* 5-Stage Interactive Progress Line (Clickable or Scroll-Driven) */}
-        <div className="relative mb-6 md:mb-12">
+        <div className="relative mb-5 sm:mb-6 md:mb-8">
           {/* Base Horizontal Track */}
           <div className="absolute top-3.5 sm:top-4 left-4 right-4 sm:left-6 sm:right-6 h-[2px] bg-navy-800" />
 
@@ -161,7 +161,7 @@ export const JvxApproach: React.FC = () => {
 
         {/* Dynamic Stage Spotlight Card with Keyed Fade Transition */}
         <div
-          className="relative border border-gold-500/30 bg-[#071F2D]/90 p-4 sm:p-10 shadow-2xl backdrop-blur-md overflow-hidden"
+          className="relative border border-gold-500/30 bg-[#071F2D]/90 p-5 sm:p-8 shadow-2xl backdrop-blur-md overflow-hidden"
         >
           {/* Continuous Micro-Progress Bar Driven by Scroll */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-navy-800">
@@ -172,14 +172,15 @@ export const JvxApproach: React.FC = () => {
           </div>
 
           <div key={activeStepIndex} className="animate-fadeIn">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-navy-800 pb-5 mb-5">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-navy-800 pb-4 mb-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <span className="text-3xl sm:text-4xl font-serif font-bold text-gold-400 font-mono">
                   {currentStep.number}
                 </span>
+                <div className="h-8 w-[1px] bg-gold-500/30 hidden sm:block" />
                 <div>
                   <span className="text-[10px] tracking-widest uppercase text-gold-400 font-mono block">
-                    {t.approach.stageLabel} {currentStep.number}
+                    {t.approach.stageLabel}
                   </span>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white">
                     {currentStep.title}
