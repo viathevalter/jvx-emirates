@@ -44,14 +44,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center group focus:outline-none py-1 mr-4 xl:mr-8 2xl:mr-12 shrink-0"
+            className="flex items-center group focus:outline-none py-1 shrink-0"
             aria-label="JVX International Business"
           >
             <JvxLogo variant="white-gold" className="h-9 sm:h-10 md:h-11 w-auto group-hover:opacity-90 transition-opacity" />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-4.5 2xl:gap-6" aria-label="Main Navigation">
             <button
               onClick={() => handleNavClick('services')}
               className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
@@ -84,14 +84,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
             </button>
             <button
               onClick={() => handleNavClick('global-flow')}
-              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-gold-400 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.globalFlow}
             </button>
           </nav>
 
           {/* Right Actions: Language Switcher (EN | PT | ES | AR) & Talk to JVX CTA */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-5 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             {/* Language Switcher */}
             <div className="flex items-center border border-navy-700/80 bg-navy-900/60 rounded px-2 py-1 text-xs shrink-0">
               <Globe className="w-3.5 h-3.5 text-gold-400 mr-1.5 rtl:mr-0 rtl:ml-1.5 opacity-80" />
