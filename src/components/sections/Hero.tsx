@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../../i18n';
-import { ShieldCheck } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 
 interface HeroProps {
@@ -22,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewServices, onBookConsultation }
   };
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen flex items-center pt-28 pb-16 sm:pt-40 sm:pb-28 overflow-hidden bg-[#040E16]">
+    <section className="relative min-h-[90vh] sm:min-h-screen flex items-center pt-28 pb-16 sm:pt-40 sm:pb-24 overflow-hidden bg-[#040E16]">
       {/* Ambient Corporate Dubai Background Video */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <video
@@ -100,26 +99,6 @@ export const Hero: React.FC<HeroProps> = ({ onViewServices, onBookConsultation }
               >
                 <span>{t.hero.secondaryCta}</span>
               </button>
-            </div>
-          </ScrollReveal>
-
-          {/* Discrete Authority & Trust Line */}
-          <ScrollReveal delay={400}>
-            <div className="mt-14 pt-8 border-t border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-4 w-full">
-              <div className="flex items-center gap-2.5 text-xs font-medium text-slate-300 max-w-md xl:max-w-lg">
-                <ShieldCheck className="w-4 h-4 text-gold-400 shrink-0" />
-                <span className="leading-relaxed">{t.hero.metricsHighlight}</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 lg:justify-end shrink-0">
-                {t.hero.clientProfiles.map((profile, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center px-3 py-1.5 text-[11px] font-medium tracking-wide text-slate-300 bg-navy-900/80 border border-white/10 rounded whitespace-nowrap"
-                  >
-                    {profile}
-                  </span>
-                ))}
-              </div>
             </div>
           </ScrollReveal>
 
