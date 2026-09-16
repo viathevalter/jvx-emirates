@@ -105,16 +105,16 @@ export const Hero: React.FC<HeroProps> = ({ onViewServices, onBookConsultation }
 
           {/* Discrete Authority & Trust Line */}
           <ScrollReveal delay={400}>
-            <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-4 max-w-3xl xl:max-w-4xl">
-              <div className="flex items-center gap-2 text-xs font-medium text-slate-300">
+            <div className="mt-14 pt-8 border-t border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-4 w-full">
+              <div className="flex items-center gap-2.5 text-xs font-medium text-slate-300 max-w-md xl:max-w-lg">
                 <ShieldCheck className="w-4 h-4 text-gold-400 shrink-0" />
-                <span>{t.hero.metricsHighlight}</span>
+                <span className="leading-relaxed">{t.hero.metricsHighlight}</span>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2 lg:justify-end shrink-0">
                 {t.hero.clientProfiles.map((profile, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center px-2.5 py-1 text-[11px] font-medium tracking-wide text-slate-400 bg-navy-900/60 border border-white/10 rounded"
+                    className="inline-flex items-center px-3 py-1.5 text-[11px] font-medium tracking-wide text-slate-300 bg-navy-900/80 border border-white/10 rounded whitespace-nowrap"
                   >
                     {profile}
                   </span>

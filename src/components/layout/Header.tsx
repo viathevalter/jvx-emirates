@@ -44,56 +44,56 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center group focus:outline-none py-1 mr-6 sm:mr-8 xl:mr-12 shrink-0"
+            className="flex items-center group focus:outline-none py-1 mr-4 xl:mr-8 2xl:mr-12 shrink-0"
             aria-label="JVX International Business"
           >
-            <JvxLogo variant="white-gold" className="h-9 sm:h-10 md:h-12 w-auto group-hover:opacity-90 transition-opacity" />
+            <JvxLogo variant="white-gold" className="h-9 sm:h-10 md:h-11 w-auto group-hover:opacity-90 transition-opacity" />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-8" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7" aria-label="Main Navigation">
             <button
               onClick={() => handleNavClick('services')}
-              className="text-xs tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.services}
             </button>
             <button
               onClick={() => handleNavClick('approach')}
-              className="text-xs tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.howItWorks}
             </button>
             <button
               onClick={() => handleNavClick('model')}
-              className="text-xs tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.operatingModel}
             </button>
             <button
               onClick={() => handleNavClick('why-jvx')}
-              className="text-xs tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.whyJvx}
             </button>
             <button
               onClick={() => handleNavClick('dubai')}
-              className="text-xs tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-slate-300 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.dubaiBase}
             </button>
             <button
               onClick={() => handleNavClick('global-flow')}
-              className="text-xs tracking-[0.15em] uppercase text-gold-400 hover:text-white transition-colors py-1 font-medium focus:outline-none cursor-pointer"
+              className="text-[11px] xl:text-xs tracking-[0.12em] xl:tracking-[0.15em] uppercase text-gold-400 hover:text-white transition-colors py-1 font-medium whitespace-nowrap focus:outline-none cursor-pointer"
             >
               {t.nav.globalFlow}
             </button>
           </nav>
 
           {/* Right Actions: Language Switcher (EN | PT | ES | AR) & Talk to JVX CTA */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5 shrink-0">
             {/* Language Switcher */}
-            <div className="flex items-center border border-navy-700/80 bg-navy-900/60 rounded px-2 py-1 text-xs">
+            <div className="flex items-center border border-navy-700/80 bg-navy-900/60 rounded px-2 py-1 text-xs shrink-0">
               <Globe className="w-3.5 h-3.5 text-gold-400 mr-1.5 rtl:mr-0 rtl:ml-1.5 opacity-80" />
               {(['en', 'pt', 'es', 'ar'] as Language[]).map((lang, idx) => (
                 <React.Fragment key={lang}>
@@ -101,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
                   <button
                     type="button"
                     onClick={() => setLanguage(lang)}
-                    className={`px-1.5 py-0.5 rounded transition-colors font-medium text-[11px] uppercase cursor-pointer ${
+                    className={`px-1.5 py-0.5 rounded transition-colors font-medium text-[11px] uppercase cursor-pointer whitespace-nowrap ${
                       language === lang
                         ? 'text-gold-300 font-bold bg-navy-800'
                         : 'text-slate-400 hover:text-slate-200'
@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsultation, onNavigateTo
             {/* Talk to JVX CTA Button */}
             <button
               onClick={onOpenConsultation}
-              className="border border-[#c5a880]/80 hover:bg-[#c5a880] text-[#c5a880] hover:text-[#040E16] px-5 py-2.5 text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-sm focus:outline-none cursor-pointer"
+              className="border border-[#c5a880]/80 hover:bg-[#c5a880] text-[#c5a880] hover:text-[#040E16] px-4 xl:px-5 py-2 xl:py-2.5 text-[11px] xl:text-xs font-semibold tracking-[0.12em] xl:tracking-[0.15em] uppercase transition-all duration-300 shadow-sm focus:outline-none cursor-pointer whitespace-nowrap shrink-0"
             >
               {t.nav.contact}
             </button>
