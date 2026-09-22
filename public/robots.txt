@@ -1,0 +1,23 @@
+﻿# Robots.txt for JVX International Business
+User-agent: *
+Allow: /
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon-48x48.png
+Allow: /favicon-32x32.png
+Allow: /favicon-16x16.png
+Allow: /apple-touch-icon.png
+Allow: /android-chrome-192x192.png
+Allow: /android-chrome-512x512.png
+
+# Dedicated crawler for favicons in Google Search
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.ico$
+Allow: /*.png$
+Allow: /*.svg$
+
+User-agent: Google-InspectionTool
+Allow: /
+
+Sitemap: https://www.jvx-emirates.com/sitemap.xml
