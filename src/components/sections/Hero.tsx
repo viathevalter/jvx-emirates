@@ -30,16 +30,16 @@ export const Hero: React.FC<HeroProps> = ({ onViewServices, onBookConsultation }
           muted
           playsInline
           poster="/images/dubai-skyline.png"
-          className="w-full h-full object-cover object-center filter brightness-95 contrast-105 scale-[1.03] transition-opacity duration-1000"
+          className="w-full h-full object-cover object-center filter brightness-100 contrast-105 scale-[1.03] transition-opacity duration-1000"
         >
           <source src="/videos/dubai-hero.mp4" type="video/mp4" />
           <source src="https://upload.wikimedia.org/wikipedia/commons/7/70/Dubai_skyline_2013.webm" type="video/webm" />
         </video>
 
-        {/* Executive Cinematic Dark Gradient Overlays - Tuned for +10% video perceptibility while maintaining razor-sharp text contrast */}
-        <div className="absolute inset-0 bg-[#040E16]/65" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#040E16]/95 via-[#040E16]/75 to-[#040E16]/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040E16] via-transparent to-[#040E16]/60" />
+        {/* Executive Cinematic Dark Gradient Overlays - Tuned for +20% cumulative video perceptibility while maintaining razor-sharp text contrast */}
+        <div className="absolute inset-0 bg-[#040E16]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#040E16]/90 via-[#040E16]/65 to-[#040E16]/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040E16] via-transparent to-[#040E16]/45" />
         
         {/* Subtle Architectural Grid Lines */}
         <div
